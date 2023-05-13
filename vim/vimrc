@@ -1,0 +1,503 @@
+""""""""""""""
+" 基础全局配置
+""""""""""""""
+let mapleader="\\" "定义前缀键
+set nocompatible "关闭兼容vi
+set ignorecase "搜索大小写不敏感
+set wildmenu "vim 自身命令行模式智能补全
+set encoding=utf-8 "使用Uni-code
+set mouse=a "允许使用鼠标
+set selection=exclusive
+set selectmode=mouse,key "选择模式设置
+set autoread "当文件外部改动时自动载入
+set matchtime=0
+set backspace=2 "兼用backspace 按键
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+" 配置vimrc
+nnoremap <leader>sv :source $MYVIMRC<CR>
+" 导入vimrc
+" 启用:Man命令查看各类man信息
+source $VIMRUNTIME/ftplugin/man.vim
+" 定义:Man命令查看各类man信息的快捷键
+nmap <Leader>man :Man 3 <cword><CR>
+
+
+
+""""""""""""""""""""""""
+" 自定义绑定键: 全局设置
+""""""""""""""""""""""""
+nmap <c-a> I
+nmap <c-e> A
+imap <c-a> <esc>I
+imap <c-e> <esc>A
+" 兼容emacs光标移动方式
+imap <c-o> <esc>o
+" insert 模式下快速插入空行
+imap <c-z> <esc><c-z>
+" insert 模式下快速进入shell
+imap <c-h> <esc>:noh<CR>i
+nmap <c-h> :noh<CR>
+" insert normal模式下关闭高亮
+
+
+
+""""""""""
+" 搜索设置
+""""""""""
+set noic " 区分大小写
+set hlsearch
+
+
+
+""""""""""
+" 提示信息
+""""""""""
+set laststatus=2 " 总是显示状态栏
+set showcmd "显示正在输入的命令
+set ruler "右下角显示光标位置
+set number "设置行号
+set cursorline "高亮当前行
+set cursorcolumn "高亮当前列
+set confirm "尝试有风险操作时进行提示
+
+
+
+""""""""""""""""
+" 语法及编辑部分
+""""""""""""""""
+syntax enable "开启语法高亮
+syntax on "允许指定语法高亮替代默认方案
+set autoindent "自动缩进
+set cindent
+set nowrap "不自动换行
+set smartindent "智能对齐
+set autowrite "自动保存
+set iskeyword+=_,$,@,%,#,- "对应字符不因换行而被分割
+set report=0 "cmd显示处理行
+set showmatch "显示匹配的括号
+set nofoldenable "禁用打开vim时自动折叠
+set fdm=syntax "自动按语法折叠
+set foldcolumn=0 "设置左侧折叠信息提示符宽度
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "取消自动注释
+au FileType c,cc,cpp setlocal comments-=:// comments+=f:// "取消C文件换行自动注释
+filetype indent on "自适应不同语言的智能缩进
+set expandtab "将制表符扩展为空格
+set tabstop=4 "设置编辑时制表符占用空格数
+set shiftwidth=4 "设置格式化时制表符占用空格数
+set softtabstop=4 "让vim 把连续数量的空格视为一个制表符 
+set smarttab "智能缩进
+
+
+
+""""""""""""""
+" 颜色主题配置
+""""""""""""""
+set background=dark
+colorscheme solarized
+"colorscheme molokai
+"colorscheme phd
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""
+" 插件管理 (使用vundle)
+"""""""""""""""""""""""
+filetype off                  " required by vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'github/copilot.vim'
+
+Plugin 'Yggdroot/indentLine'
+" Indents visualization tool
+
+Plugin 'preservim/nerdcommenter'
+" comment tool
+
+Plugin 'preservim/nerdtree'
+" directory tree tool
+
+Plugin 'jistr/vim-nerdtree-tabs'
+" supplementary plug in part for better nerdtree
+
+Plugin 'ryanoasis/vim-devicons'
+" Nerdtree显示光标
+
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Nerdtree 根据语法高亮不同文件
+
+Plugin 'kien/rainbow_parentheses.vim'
+" 彩色括号匹配插件
+
+Plugin 'rhysd/vim-clang-format'
+" C/C++代码自动格式化插件
+
+Plugin 'tell-k/vim-autopep8'
+" python代码自动格式化插件
+
+Plugin 'derekwyatt/vim-fswitch'
+" switching between companion files (e.g. ".h" and ".cpp" files)
+
+Plugin 'kshenoy/vim-signature'
+" User friendly book marks
+
+Plugin 'Valloric/YouCompleteMe'
+" Awesome plugin with libclang
+
+Plugin 'Lokaltog/vim-easymotion'
+" 快速移动光标插件, f<character>
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" vim 状态栏主题
+
+Plugin 'airblade/vim-gitgutter'
+" git diff status
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+
+""""""""""
+"
+" 插件参数
+"
+""""""""""
+
+""""""""""""""""""""""""""""""""""""
+" 缩进可视化插件 (vim-indent-guides)
+""""""""""""""""""""""""""""""""""""
+" 随 vim 自启动
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 色块宽度
+let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+
+
+""""""""""""""""""""""""""""""
+" 注释辅助插件 (nerdcommenter)
+""""""""""""""""""""""""""""""
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
+
+
+""""""""""""""""""""""""""
+" 目录树基础设置(Nerdtree)
+""""""""""""""""""""""""""
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=1
+" 设置宽度
+let NERDTreeWinSize=28
+" 在终端启动vim时，共享NERDTree
+let g:nerdtree_tabs_open_on_console_startup=0
+" 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+" 显示书签列表
+let NERDTreeShowBookmarks=1
+"Show Node model.
+let NERDTreeDirArrows=1
+"Delete help information at the top
+let NERDTreeMinimalUI=1
+" 打开nerdtree快捷方式
+map <C-n> :NERDTreeToggle<CR>
+
+
+
+""""""""""""""""""""""""""""""""""""""""
+" vim-nerdtree-syntax-highlight settings
+""""""""""""""""""""""""""""""""""""""""
+"Highlight full name (not only icons). You need to add this if you don't have vim-devicons and want highlight.
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+"Highlight full name (not only icons). You need to add this if you don't have vim-devicons and want highlight.
+let g:NERDTreeHighlightFolders = 1
+
+"highlights the folder name
+let g:NERDTreeHighlightFoldersFullName = 1
+
+"you can add these colors to your .vimrc to help customizing
+let s:brown = "905532"
+let s:aqua =  "3AFFDB"
+let s:blue = "689FB6"
+let s:darkBlue = "44788E"
+let s:purple = "834F79"
+let s:lightPurple = "834F79"
+let s:red = "AE403F"
+let s:beige = "F5C06F"
+let s:yellow = "F09F17"
+let s:orange = "D4843E"
+let s:darkOrange = "F16529"
+let s:pink = "CB6F6F"
+let s:salmon = "EE6E73"
+let s:green = "8FAA54"
+let s:Turquoise = "40E0D0"
+let s:lightGreen = "31B53E"
+let s:white = "FFFFFF"
+let s:rspec_red = "FE405F"
+let s:git_orange = "F54D27"
+let s:gray = "808A87"
+
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['o'] = s:gray " sets the color of o files to blue
+let g:NERDTreeExtensionHighlightColor['h'] = s:blue " sets the color of h files to blue
+let g:NERDTreeExtensionHighlightColor['c'] = s:green " sets the color of c files to blue
+let g:NERDTreeExtensionHighlightColor['cpp'] = s:green " sets the color of cpp files to blue
+let g:NERDTreeExtensionHighlightColor['c++'] = s:green " sets the color of c++ files to blue
+let g:NERDTreeExtensionHighlightColor['py'] = s:green " sets the color of c++ files to blue
+let g:NERDTreeExtensionHighlightColor['ipynb'] = s:green " sets the color of c++ files to blue
+
+
+
+"""""""""""""""""""""""""""""
+"nerdtree-git-plugin settings
+"""""""""""""""""""""""""""""
+" nerdtree中显示git信息
+let g:NERDTreeShowIgnoredStatus = 1
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+
+"""""""""""""""""
+"rainbow settings
+"""""""""""""""""
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+" 不加入这行, 防止黑色括号出现, 很难识别
+" \ ['black',       'SeaGreen3'],
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" rhysd/vim-clang-format: C风格自动格式化插件
+"""""""""""""""""""""""""""""""""""""""""""""
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++11",
+            \ "BreakBeforeBraces" : "Stroustrup"}
+" map to <Leader>cf in C/C++ code
+autocmd FileType c,cpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" if you install vim-operator-user
+autocmd FileType c,cpp map <buffer><Leader>x <Plug>(operator-clang-format)
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+
+""""""""""""""""""""
+" 可视化缩进插件设置
+""""""""""""""""""""
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" Vim
+let g:indentLine_color_term = 239
+
+" GVim
+let g:indentLine_color_gui = '#A4E57E'
+
+" none X terminal
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+
+" Background (Vim, GVim)
+let g:indentLine_bgcolor_term = 186
+let g:indentLine_bgcolor_gui = '#FF5F00'
+
+
+
+"""""""""""""""""""""""""""""""""""""""""
+" vim-autopep8: python 自动格式化插件设置
+"""""""""""""""""""""""""""""""""""""""""
+autocmd FileType python noremap <buffer><Leader>pf :call Autopep8()<CR>
+let g:autopep8_disable_show_diff = 1 
+
+
+
+"""""""""""""""""""""""""""""""""""
+" vim-fswitch: 头文件与代码文件切换
+"""""""""""""""""""""""""""""""""""
+nmap <silent> <Leader>sw :FSHere<cr>
+
+
+
+"""""""""""""""""""""""""""""
+" vim-signature: 书签管理配置
+"""""""""""""""""""""""""""""
+let g:SignatureMap = {
+        \ 'Leader'             :  "m",
+        \ 'PlaceNextMark'      :  "m,",
+        \ 'ToggleMarkAtLine'   :  "m.",
+        \ 'PurgeMarksAtLine'   :  "m-",
+        \ 'DeleteMark'         :  "dm",
+        \ 'PurgeMarks'         :  "mda",
+        \ 'PurgeMarkers'       :  "m<BS>",
+        \ 'GotoNextLineAlpha'  :  "']",
+        \ 'GotoPrevLineAlpha'  :  "'[",
+        \ 'GotoNextSpotAlpha'  :  "`]",
+        \ 'GotoPrevSpotAlpha'  :  "`[",
+        \ 'GotoNextLineByPos'  :  "]'",
+        \ 'GotoPrevLineByPos'  :  "['",
+        \ 'GotoNextSpotByPos'  :  "mn",
+        \ 'GotoPrevSpotByPos'  :  "mp",
+        \ 'GotoNextMarker'     :  "[+",
+        \ 'GotoPrevMarker'     :  "[-",
+        \ 'GotoNextMarkerAny'  :  "]=",
+        \ 'GotoPrevMarkerAny'  :  "[=",
+        \ 'ListLocalMarks'     :  "ms",
+        \ 'ListLocalMarkers'   :  "m?"
+        \ }
+
+
+
+""""""""""
+" YCM 配置
+""""""""""
+set completeopt=longest,menu	"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif	"离开插入模式后自动关闭预览窗口
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"	"回车即选中当前项
+"上下左右键的行为 会显示其他信息
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+" 跳转到定义处
+nnoremap <leader>je :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <F6> :YcmForceCompileAndDiagnostics<CR>	"force recomile with syntastic
+nnoremap <leader>lo :lopen<CR>	"open locationlist
+nnoremap <leader>lc :lclose<CR>	"close locationlist
+inoremap <leader><leader>g <C-x><C-o>
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+" 不显示开启vim时检查ycm_extra_conf文件的信息  
+let g:ycm_confirm_extra_conf=0
+" 开启基于tag的补全，可以在这之后添加需要的标签路径  
+let g:ycm_collect_identifiers_from_tags_files=1
+"注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+" 输入第2个字符开始补全
+let g:ycm_min_num_of_chars_for_completion=2
+" 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 开启语义补全
+let g:ycm_seed_identifiers_with_syntax=1	
+"在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+"在字符串输入中也能补全
+let g:ycm_complete_in_strings = 1
+" 设置在下面几种格式的文件上屏蔽ycm
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'nerdtree' : 1,
+      \}
+"youcompleteme  默认tab  s-tab 和 ultisnips 冲突
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+" 修改对C函数的补全快捷键，默认是CTRL + space，修改为ALT + ;
+let g:ycm_key_invoke_completion = '<M-;>'
+
+
+
+""""""""""""""""
+" 状态栏主题配置
+""""""""""""""""
+let g:airline_powerline_fonts = 1  " 支持 powerline 字体
+let g:airline#extensions#tabline#enabled = 1 " 显示窗口tab和buffer
+let g:airline_theme='atomic'  " 配色主题
+
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+
+
+
+""""""""""""""""""""""""""""""""""""
+" Vim-gitgutter: git diff 可视化插件
+""""""""""""""""""""""""""""""""""""
+set updatetime=100 " 每100ms更新一次git diff 状态

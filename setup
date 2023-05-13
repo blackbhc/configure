@@ -1,0 +1,45 @@
+#! /bin/bash
+rm -f ~/.vimrc ~/.tmux.config
+
+# diff-so-fancy config
+
+# globale settings of git diff
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+git config --global interactive.diffFilter "diff-so-fancy --patch"
+
+git config --global color.ui true
+
+git config --global color.diff-highlight.oldNormal "red bold"
+git config --global color.diff-highlight.oldHighlight "red bold 52"
+git config --global color.diff-highlight.newNormal "green bold"
+git config --global color.diff-highlight.newHighlight "green bold 22"
+
+git config --global color.diff.meta "11"
+git config --global color.diff.frag "magenta bold"
+git config --global color.diff.func "146 bold"
+git config --global color.diff.commit "yellow bold"
+git config --global color.diff.old "red bold"
+git config --global color.diff.new "green bold"
+git config --global color.diff.whitespace "red reverse"
+[[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
+
+[[ -d ~/.diff-so-fancy ]] || git clone https://github.com/so-fancy/diff-so-fancy.git ~/.diff-so-fancy
+ln -sf ~/.diff-so-fancy/diff-so-fancy ~/.local/bin/
+
+# vim config
+[[ -d ~/.vim ]] || ln -sf ~/configure/vim ~/.vim
+[[ -x ~/configure/vim/bundle ]] || (mkdir -p ~/configure/vim/bundle && git clone https://github.com/gmarik/Vundle.vim.git ~/configure/vim/bundle/Vundle.vim)
+ln -sf ~/configure/vimrc ~/.vimrc
+
+# nvim config
+[[ -d ~/.config/nvim ]] || cp -r ~/configure/nvim ~/.config/nvim
+
+# tmux config
+ln -sf ~/configure/tmux.conf ~/.tmux.conf
+
+# zsh plugin config
+[[ -d ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting ]] || git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+[[ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+[[ -d ~/.oh-my-zsh/custom/plugins/history-search-multi-word ]] || git clone --depth=1 https://github.com/zdharma-continuum/history-search-multi-word ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/history-search-multi-word
+[[ -d ~/.oh-my-zsh/powerlevel10k ]] || (git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/powerlevel10k && echo 'source ~/.oh-my-zsh/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc)
+[[ -d ~/.oh-my-zsh/custom/plugins/zsh_codex ]] || git clone https://github.com/tom-doerr/zsh_codex.git ~/.oh-my-zsh/custom/plugins/zsh_codex
