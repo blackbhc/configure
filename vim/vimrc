@@ -55,7 +55,7 @@ set hlsearch
 set laststatus=2 " 总是显示状态栏
 set showcmd "显示正在输入的命令
 set ruler "右下角显示光标位置
-set number "设置行号
+set number relativenumber"设置行号
 set cursorline "高亮当前行
 set cursorcolumn "高亮当前列
 set confirm "尝试有风险操作时进行提示
