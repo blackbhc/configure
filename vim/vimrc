@@ -112,7 +112,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'vimcolorschemes/vimcolorschemes'
+" color theme plugins
+
 Plugin 'github/copilot.vim'
+" Github copilot plugin
 
 Plugin 'Yggdroot/indentLine'
 " Indents visualization tool
@@ -501,3 +505,9 @@ let g:airline_symbols.branch = '⎇'
 " Vim-gitgutter: git diff 可视化插件
 """"""""""""""""""""""""""""""""""""
 set updatetime=100 " 每100ms更新一次git diff 状态
+let g:gitgutter_sign_added = ' '
+let g:gitgutter_sign_modified = ' '
+let g:gitgutter_sign_removed = ' '
+let g:gitgutter_sign_removed_first_line = ' '
+let g:gitgutter_sign_removed_above_and_below = ' '
+let g:gitgutter_sign_modified_removed = ' '
