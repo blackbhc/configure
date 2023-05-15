@@ -1,8 +1,8 @@
 ####### --- editor config -----
-if command -v nvim  2&>/dev/null 1&>/dev/null; then
-	alias vi=nvim
-else
+if command -v vim  2&>/dev/null 1&>/dev/null; then
 	alias vi=vim
+elif [[ command -v nvim 2&>/dev/null 1&/dev/null ]]; then
+	alias vi=nvim
 fi
 
 if command -v exa 2&>/dev/null 1&>/dev/null; then
