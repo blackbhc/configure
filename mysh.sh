@@ -1,7 +1,7 @@
 ####### --- editor config -----
 if command -v vim  2&>/dev/null 1&>/dev/null; then
 	alias vi=vim
-elif [[ command -v nvim 2&>/dev/null 1&/dev/null ]]; then
+elif command -v nvim 2&>/dev/null 1&/dev/null; then
 	alias vi=nvim
 fi
 
