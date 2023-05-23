@@ -14,7 +14,6 @@ fi
 
 ####### --- special files -----
 # open .py .c .html .cc .c++ .cpp .hpp .h .sh ... with editor
-alias -s py=vi
 alias -s pyc=vi
 alias -s ipynb=vi
 alias -s c=vi
@@ -23,7 +22,6 @@ alias -s c++=vi
 alias -s cc=vi
 alias -s h=vi
 alias -s hpp=vi
-alias -s sh=vi
 alias -s zsh=vi
 alias -s bash=vi
 alias -s html=vi
