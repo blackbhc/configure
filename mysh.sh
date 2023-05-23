@@ -12,6 +12,8 @@ if command -v exa 2 1 &>/dev/null &>/dev/null; then
 	alias ls=exa
 fi
 
+alias emacs="emacs -nw"
+
 ####### --- special files -----
 # open .py .c .html .cc .c++ .cpp .hpp .h .sh ... with editor
 alias -s pyc=vi
