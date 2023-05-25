@@ -42,3 +42,6 @@ alias -s bz2='tar -xjvf'
 ####### --- command editing mode -----
 alias vimode='set -o vi'
 alias emode='set -o emacs'
+
+####### --- file navigator nnn -------
+alias nnn="nnn -UigdC"
