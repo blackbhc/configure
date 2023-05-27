@@ -7,6 +7,7 @@ set ignorecase "搜索大小写不敏感
 set wildmenu "vim 自身命令行模式智能补全
 set encoding=utf-8 "使用Uni-code
 set mouse=a "允许使用鼠标
+set ttymouse=sgr "同上
 set selection=exclusive
 set selectmode=mouse,key "选择模式设置
 set autoread "当文件外部改动时自动载入
