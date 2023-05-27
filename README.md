@@ -1,5 +1,5 @@
 # configure files
-- `alacritty.yml`: configuration file of alacritty.
+- `wezterm.lua`: configuration file of wezterm.
 - `nvim`: configuration files of neovim, similar one is `vim` for configuration of vim which is too old and only for backup.
 - `mysh.sh`: some global settings of shell, both for zsh and bash.
 - `setup`: executable script to setup the working environment.
@@ -12,7 +12,7 @@
 - `gnome`
 
 ### Terminal:
-- `alacritty`
+- [`wezterm`](https://wezfurlong.org/wezterm/)
 
 ### Explorer
 - `firefox` or `safari` 

@@ -45,7 +45,5 @@ ln -sf ~/configure/tmux.conf ~/.tmux.conf
 [[ -d ~/.oh-my-zsh/custom/plugins/zsh_codex ]] || git clone https://github.com/tom-doerr/zsh_codex.git ~/.oh-my-zsh/custom/plugins/zsh_codex
 
 # alacritty config
-[[ -d ~/.config/alacritty/themes ]] || (mkdir -p ~/.config/alacritty/themes && git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes)
-# color themes
-[[ -f ~/.config/alacritty/alacritty.yml ]] || cp ~/configure/alacritty.yml ~/.config/alacritty/alacritty.yml
+[[ -f ~/.wezterm.lua ]] || ln -s ~/configure/wezterm.lua ~/.wezterm.lua
 # other config
