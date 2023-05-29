@@ -3,8 +3,7 @@ if command -v nvim 2 1 &>/dev/null &>/dev/null; then
 	alias vi=nvim
 	export EDITOR=nvim
 elif
-	command -v vim 2 1 &>/dev/null &
-	/dev/null
+	command -v vim 2 1 &>/dev/null &>/dev/null
 then
 	alias vi=vim
 	export EDITOR=vim
