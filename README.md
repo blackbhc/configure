@@ -39,6 +39,7 @@
 - `nnn` for file navigation 
 - `bat` for better file view 
 - `exa` for better file list 
+- `lsd` for better file list
 - `axel` for better download
 - `btop` for better ps contral  
 - `ncdu` + `duf` for better disk organization 

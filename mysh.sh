@@ -9,7 +9,9 @@ then
 	export EDITOR=vim
 fi
 
-if command -v exa 2 1 &>/dev/null &>/dev/null; then
+if command -v lsd 2 1 &>/dev/null &>/dev/null; then
+	alias ls=lsd
+elif command -v exa 2 1 &>/dev/null &>/dev/null; then
 	alias ls=exa
 fi
 
