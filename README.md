@@ -43,6 +43,7 @@
 - `axel` for better download
 - `btop` for better ps contral  
 - `ncdu` + `duf` for better disk organization 
+- `cppman` for documentation of standard C++ libraries.
 
 ### Container
 - `docker`
