@@ -44,6 +44,9 @@ ln -sf ~/configure/tmux.conf ~/.tmux.conf
 [[ -d ~/.oh-my-zsh/powerlevel10k ]] || (git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/powerlevel10k && echo 'source ~/.oh-my-zsh/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc)
 [[ -d ~/.oh-my-zsh/custom/plugins/zsh_codex ]] || git clone https://github.com/tom-doerr/zsh_codex.git ~/.oh-my-zsh/custom/plugins/zsh_codex
 
-# alacritty config
+# wezterm config
 [[ -f ~/.wezterm.lua ]] || ln -s ~/configure/wezterm.lua ~/.wezterm.lua
 # other config
+
+# gdb config
+[[ -f ~/.gdbinit ]] || ln -s ~/configure/gdbinit-fixed ~/.gdbinit
