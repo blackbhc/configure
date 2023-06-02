@@ -36,7 +36,7 @@
 
 ### Terminal tools 
 - `tldr` for doc 
-- `nnn` for file navigation 
+- `nnn` and `ranger` for file navigation 
 - `bat` for better file view 
 - `exa` for better file list 
 - `lsd` for better file list
