@@ -1,26 +1,6 @@
 #! /bin/bash
 rm -f ~/.vimrc ~/.tmux.config
 
-# diff-so-fancy config
-
-# globale settings of git diff
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
-git config --global interactive.diffFilter "diff-so-fancy --patch"
-
-git config --global color.ui true
-
-git config --global color.diff-highlight.oldNormal "red bold"
-git config --global color.diff-highlight.oldHighlight "red bold 52"
-git config --global color.diff-highlight.newNormal "green bold"
-git config --global color.diff-highlight.newHighlight "green bold 22"
-
-git config --global color.diff.meta "11"
-git config --global color.diff.frag "magenta bold"
-git config --global color.diff.func "146 bold"
-git config --global color.diff.commit "yellow bold"
-git config --global color.diff.old "red bold"
-git config --global color.diff.new "green bold"
-git config --global color.diff.whitespace "red reverse"
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
 
 [[ -d ~/.diff-so-fancy ]] || git clone https://github.com/so-fancy/diff-so-fancy.git ~/.diff-so-fancy
@@ -46,7 +26,6 @@ ln -sf ~/configure/tmux.conf ~/.tmux.conf
 
 # wezterm config
 [[ -f ~/.wezterm.lua ]] || ln -s ~/configure/wezterm.lua ~/.wezterm.lua
-# other config
 
-# gdb config
-[[ -f ~/.gdbinit ]] || ln -s ~/configure/gdbinit-fixed ~/.gdbinit
+# git config
+[[ -f ~/.gitconfig ]] || ln -s ~/configure/gitconfig ~/.gitconfig
