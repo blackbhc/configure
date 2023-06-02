@@ -36,6 +36,7 @@ alias -s test=vi
 alias -s temp=vi
 # run with archived file with tar or unzip
 alias -s gz='tar -xzvf'
+alias -s xz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
