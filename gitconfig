@@ -1,0 +1,52 @@
+[init]
+	defaultBranch = main
+[color]
+	ui = true
+[alias]
+	co = checkout
+	ci = commit -m
+	back = reset HEAD^
+	last = log -1
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	di = diff HEAD --
+	br = branch
+	sw = switch
+	me = merge
+	dbr = branch -d
+[user]
+	email = blackbhc@icloud.com
+	name = blackbhc
+
+[pull]
+        ff = only
+
+[core]
+    excludesfile = /Users/blackbhc/.gitignore_global
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive --diff-so-fancy
+    minus-style = red bold ul "#ffeeee"
+
+[delta]
+    features = unobtrusive-line-numbers decorations
+    whitespace-error-style = 22 reverse
+    true-color = always
+
+[delta "unobtrusive-line-numbers"]
+    line-numbers = true
+    minus-style = "#FF0000" bold ul "#F8F8FF"
+    plus-style = "#00FF00" bold ul "#A9A9A9"
+    line-numbers-minus-style = "#FF0000"
+    line-numbers-zero-style = white
+    line-numbers-plus-style = green
+    line-numbers-left-format = "{nm:>4}┊"
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = cyan box ul

@@ -1,8 +1,9 @@
 # configure files
-- `wezterm.lua`: configuration file of wezterm.
-- `nvim`: configuration files of neovim, similar one is `vim` for configuration of vim which is too old and only for backup.
+- `gitconfig`: configuration file of git.
 - `mysh.sh`: some global settings of shell, both for zsh and bash.
+- `nvim`: configuration files of neovim, similar one is `vim` for configuration of vim which is too old and only for backup.
 - `setup`: executable script to setup the working environment.
+- `wezterm.lua`: configuration file of wezterm.
 
 
 # My personal preferences of some awesome software.
@@ -32,7 +33,7 @@
 - python package manager: `miniconda` + `mamba` > `pip`
 
 ### Version contral
-- `git` + `diff-so-fancy`
+- `git` + `delta`
 
 ### Terminal tools 
 - `tldr` for doc 
