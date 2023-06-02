@@ -44,6 +44,7 @@
 - `btop` for better ps contral  
 - `ncdu` + `duf` for better disk organization 
 - `cppman` for documentation of standard C++ libraries.
+- `shellcheck` for shell script syntax checking.
 
 ### Container
 - `docker`
