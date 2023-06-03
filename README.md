@@ -46,6 +46,7 @@
 - `ncdu` + `duf` for better disk organization 
 - `cppman` for documentation of standard C++ libraries.
 - `shellcheck` for shell script syntax checking.
+- [`black`](https://github.com/psf/black) for formatting python scripts.
 
 ### Container
 - `docker`
