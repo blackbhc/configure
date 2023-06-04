@@ -4,9 +4,7 @@ rm -f ~/.vimrc ~/.tmux.config
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
 
 # vim config
-[[ -d ~/.vim ]] || ln -sf ~/configure/vim ~/.vim
-[[ -x ~/configure/vim/bundle ]] || (mkdir -p ~/configure/vim/bundle && git clone https://github.com/gmarik/Vundle.vim.git ~/configure/vim/bundle/Vundle.vim)
-ln -sf ~/configure/vimrc ~/.vimrc
+[[ -d ~/.SpaceVim]] || (mkdir -p ~/configure/vim/bundle && git clone https://github.com/gmarik/Vundle.vim.git ~/configure/vim/bundle/Vundle.vim)
 
 # nvim config
 [[ -d ~/.config/nvim ]] || cp -r ~/configure/nvim ~/.config/nvim
