@@ -38,6 +38,7 @@
 ### Terminal tools 
 - `tldr` for doc 
 - `ranger` for file navigation 
+- `zoxide` for better `cd` experience
 - `bat` for better file view 
 - `exa` for better file list 
 - `lsd` for better file list
