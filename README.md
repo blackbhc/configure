@@ -15,7 +15,7 @@
 ### Terminal:
 - [`wezterm`](https://wezfurlong.org/wezterm/)
 
-### Explorer
+### Browser 
 - `firefox` or `safari` 
 
 
