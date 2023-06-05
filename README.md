@@ -27,7 +27,7 @@
 - `neovim` > `emacs`/`vim`: with [LazyVim](https://www.lazyvim.org) and some useful plugins.
 
 ### Develogment tools:
-- compiler: `clang` > `gcc`
+- compiler: `clang` > `gcc` > `icx` for test, `gcc` for release, and `icx` for HPC applications.
 - debugger: `gdb` 
 - build system: `make` + `cmake`
 - python package manager: `miniconda` + `mamba` > `pip`
