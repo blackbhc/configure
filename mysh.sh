@@ -47,3 +47,6 @@ alias emode='set -o emacs'
 
 ####### --- file navigator nnn -------
 alias nnn="nnn -UigdC"
+
+####### --- clang-format -------
+alias clang-format="clang-format --style=\"{BasedOnStyle: google, IndentWidth: 4}\""
