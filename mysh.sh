@@ -49,4 +49,4 @@ alias emode='set -o emacs'
 alias nnn="nnn -UigdC"
 
 ####### --- clang-format -------
-alias clang-format="clang-format --style=\"{BasedOnStyle: google, IndentWidth: 4}\""
+alias clang-format="clang-format --style=\"{BasedOnStyle: Mozilla, IndentWidth: 4}\""
