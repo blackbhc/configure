@@ -47,7 +47,5 @@
 - `ncdu` + `duf` for better disk organization 
 - `cppman` for documentation of standard C++ libraries.
 - `shellcheck` for shell script syntax checking.
-- [`black`](https://github.com/psf/black) for formatting python scripts.
-
-### Container
-- `docker`
+- [`black`](https://github.com/psf/black) for formatting python scripts, `format/pyproject.toml` for configuration.
+- `clang-format`: for formatting of c++, java and some other languages, `format/clang-format` for configuration.. 

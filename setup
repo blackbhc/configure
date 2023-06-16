@@ -28,7 +28,7 @@ ln -sf ~/configure/tmux.conf ~/.tmux.conf
 [[ -f ~/.gitconfig ]] || ln -s ~/configure/gitconfig ~/.gitconfig
 
 # zoxide config
-if command -v zoxide 2 1 &>/dev/null &>/dev/null; then
+if ! command -v zoxide 2 1 &>/dev/null &>/dev/null; then
 	curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 	if [[ $SHELL == '/bin/bash' ]]; then
 		echo 'eval "$(zoxide init bash)"' >>~/.bashrc
@@ -36,3 +36,9 @@ if command -v zoxide 2 1 &>/dev/null &>/dev/null; then
 		echo 'eval "$(zoxide init zsh)"' >>~/.zshrc
 	fi
 fi
+
+# command line tools config
+## black
+([[ -d ~/.config/black ]] && [[ -f ~/.config/black/.pyproject.toml ]]) || (mkdir -p ~/.config/black && ln -s ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml)
+## clang-format
+[[ -f ~/.clang-format ]] || ln -s ~/configure/format/clang-format ~/.clang-format
