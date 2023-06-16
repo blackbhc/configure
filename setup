@@ -5,9 +5,6 @@ rm -f ~/.vimrc ~/.tmux.config
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
 
 # editor config
-# vim config
-[[ -d ~/.SpaceVim ]] || curl -sLf https://spacevim.org/install.sh | bash
-
 # nvim config
 [[ -d ~/.config/nvim ]] || cp -r ~/configure/nvim ~/.config/nvim
 
