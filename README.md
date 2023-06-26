@@ -33,7 +33,8 @@
 - python package manager: `miniconda` + `mamba` > `pip`
 
 ### Version contral
-- `git` + `delta`
+- `git`: for version control.
+- `delta`: for better visualization of `git diff`.
 
 ### Terminal tools 
 - `tldr` for doc 
