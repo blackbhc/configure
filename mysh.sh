@@ -45,3 +45,6 @@ alias emode='set -o emacs'
 
 ####### --- file navigator nnn -------
 alias nnn="nnn -UigdC"
+
+####### --- batcat theme -----
+export BAT_THEME="base16"
