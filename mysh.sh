@@ -16,13 +16,13 @@ elif command -v exa 2 1 &>/dev/null &>/dev/null; then
 fi
 
 ####### --- special files -----
-# open .py .c .html .cc .c++ .cpp .hpp .h .sh ... with editor
+# open .c .html .cc .c++ .cpp .hpp .h .sh ... with editor
 alias -s pyc=vi
 alias -s ipynb=vi
 alias -s c=vi
+alias -s cc=vi
 alias -s cpp=vi
 alias -s c++=vi
-alias -s cc=vi
 alias -s h=vi
 alias -s hpp=vi
 alias -s zsh=vi
