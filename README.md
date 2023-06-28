@@ -9,9 +9,6 @@
 # My personal preferences of some awesome software.
 
 # Glamorization
-### Desktop environment
-- `gnome`
-
 ### Terminal:
 - [`wezterm`](https://wezfurlong.org/wezterm/)
 
