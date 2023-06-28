@@ -28,6 +28,6 @@ end)
 -- keymap setting ups
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
-config.font_size = 17
+config.font_size = 15
 -- and finally, return the configuration to wezterm
 return config
