@@ -39,3 +39,6 @@ fi
 ([[ -d ~/.config/black ]] && [[ -f ~/.config/black/.pyproject.toml ]]) || (mkdir -p ~/.config/black && ln -s ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml)
 ## clang-format
 [[ -f ~/.clang-format ]] || ln -s ~/configure/format/clang-format ~/.clang-format
+
+# personal tool for work
+[[ -d ~/.local/Tools ]] || (git clone git@github.com:blackbhc/tools.git ~/.local/Tools && ln -fs ~/.local/Tools/* ~/.local/bin/ && rm ~/.local/bin/README.md)
