@@ -12,6 +12,7 @@ rm -f ~/.vimrc ~/.tmux.config
 ln -sf ~/configure/tmux.conf ~/.tmux.conf
 
 # zsh plugin config
+[[ -d ~/.oh-my-zsh ]] || (wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh)
 [[ -d ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting ]] || git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 [[ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 [[ -d ~/.oh-my-zsh/custom/plugins/history-search-multi-word ]] || git clone --depth=1 https://github.com/zdharma-continuum/history-search-multi-word ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/history-search-multi-word
