@@ -1,7 +1,6 @@
 #! /bin/bash
 rm -f ~/.vimrc ~/.tmux.config
-cd ~/configure && git pull
-git submodule update --init --recursive
+cd ~/configure && git pull && git submodule update --init --recursive
 
 # path config
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
