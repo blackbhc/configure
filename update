@@ -1,5 +1,6 @@
 #! /bin/bash
 rm -f ~/.vimrc ~/.tmux.config
+git submodule update --init --recursive
 
 # path config
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
@@ -43,4 +44,10 @@ fi
 
 # personal tool for work
 [[ -d ~/.local/Tools ]] || (git clone git@github.com:blackbhc/tools.git ~/.local/Tools)
-ln -fs ~/.local/Tools/* ~/.local/bin/ && unlink ~/.local/bin/README.md
+cd ~/.local/Tools/ &&
+	ln -fs ~/.local/Tools/* ~/.local/bin/ && unlink ~/.local/bin/README.md
+
+# LazyVim config
+rm -rf ~/.config/nvim
+git submodule update --remote
+cp -r ~/configure/nvim ~/.config/nvim
