@@ -48,3 +48,7 @@ alias nnn="nnn -UigdC"
 
 ####### --- batcat theme -----
 export BAT_THEME="base16"
+
+####### --- tools alias -----
+alias ic=imgcat
+alias a2=aria2c
