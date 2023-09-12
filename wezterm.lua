@@ -28,6 +28,8 @@ end)
 -- keymap setting ups
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
+-- font setting ups
+config.font = wezterm.font("JetBrainsMono")
 config.font_size = 15
 -- and finally, return the configuration to wezterm
 return config
