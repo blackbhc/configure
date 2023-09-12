@@ -1,13 +1,10 @@
 #! /bin/bash
 rm -f ~/.vimrc ~/.tmux.config
-cd ~/configure && git pull && git submodule update --init --recursive
+git submodule update --init --recursive
+cd ~/configure && git pull && git submodule update --remote
 
 # path config
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
-
-# editor config
-# nvim config
-[[ -d ~/.config/nvim ]] || cp -r ~/configure/nvim ~/.config/nvim
 
 # tmux config
 ln -sf ~/configure/tmux.conf ~/.tmux.conf
@@ -49,5 +46,4 @@ cd ~/.local/Tools/ &&
 
 # LazyVim config
 rm -rf ~/.config/nvim
-git submodule update --remote
 cp -r ~/configure/nvim ~/.config/nvim
