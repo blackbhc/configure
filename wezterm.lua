@@ -31,5 +31,9 @@ config.send_composed_key_when_right_alt_is_pressed = false
 -- font setting ups
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 15
+-- add scroll bar
+config.enable_scroll_bar = true
+config.scrollback_lines = 10000
+config.min_scroll_bar_height = "2cell"
 -- and finally, return the configuration to wezterm
 return config
