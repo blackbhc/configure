@@ -38,6 +38,8 @@ fi
 ([[ -d ~/.config/black ]] && [[ -f ~/.config/black/.pyproject.toml ]]) || (mkdir -p ~/.config/black && ln -s ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml)
 ## clang-format
 [[ -f ~/.clang-format ]] || ln -s ~/configure/format/clang-format ~/.clang-format
+## rustfmt
+[[ -f ~/.config/rustfmt/rustfmt.toml ]] || (mkdir -p ~/.config/rustfmt/ && ln -s ~/configure/format/rustfmt ~/.config/rustfmt/rustfmt.toml)
 
 # personal tool for work
 [[ -d ~/.local/Tools ]] || (git clone git@github.com:blackbhc/tools.git ~/.local/Tools)
@@ -47,3 +49,7 @@ cd ~/.local/Tools/ &&
 # LazyVim config
 rm -rf ~/.config/nvim
 cp -r ~/configure/nvim ~/.config/nvim
+
+# Nightly rust toolchain
+[[ -d ~/.rustup ]] || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)
+rustup toolchain install nightly # install nightly toolchain
