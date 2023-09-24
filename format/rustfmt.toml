@@ -1,4 +1,4 @@
-max_width=50
+max_width=100
 control_brace_style="AlwaysNextLine"
 reorder_imports = true
 reorder_modules = true
