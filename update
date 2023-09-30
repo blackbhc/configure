@@ -1,8 +1,7 @@
 #! /bin/bash
 rm -f ~/.vimrc ~/.tmux.config
-rm -r ~/.config/rustfmt/
-git submodule update --init --recursive
-cd ~/configure && git pull && git submodule update --remote
+git submodule update --init --recursive --depth=1
+cd ~/configure && git pull && git submodule update --remote --depth=1
 
 # path config
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
@@ -25,7 +24,7 @@ ln -sf ~/configure/tmux.conf ~/.tmux.conf
 [[ -f ~/.gitconfig ]] || ln -s ~/configure/gitconfig ~/.gitconfig
 
 # zoxide config
-if ! command -v zoxide 2 1 &>/dev/null &>/dev/null; then
+if ! command -v zoxide 2>/dev/null 1>/dev/null; then
 	curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 	if [[ $SHELL == '/bin/bash' ]]; then
 		echo 'eval "$(zoxide init bash)"' >>~/.bashrc
@@ -34,16 +33,14 @@ if ! command -v zoxide 2 1 &>/dev/null &>/dev/null; then
 	fi
 fi
 
-# command line tools config
+# development tools config
 ## black
-([[ -d ~/.config/black ]] && [[ -f ~/.config/black/.pyproject.toml ]]) || (mkdir -p ~/.config/black && ln -s ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml)
+[[ -d ~/.config/black && -f ~/.config/black/.pyproject.toml ]] || (mkdir -p ~/.config/black && ln -s ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml)
 ## clang-format
 [[ -f ~/.clang-format ]] || ln -s ~/configure/format/clang-format ~/.clang-format
-## rustfmt
-[[ -f ~/.config/rustfmt ]] && [[ -f ~/.config/rustfmt/rustfmt.toml ]] || (mkdir -p ~/.config/rustfmt/ && ln -s ~/configure/format/rustfmt.toml ~/.config/rustfmt/rustfmt.toml)
 
 # personal tool for work
-[[ -d ~/.local/Tools ]] || (git clone git@github.com:blackbhc/tools.git ~/.local/Tools)
+[[ -d ~/.local/Tools ]] || (git clone git@github.com:blackbhc/tools.git ~/.local/Tools --depth=1)
 cd ~/.local/Tools/ &&
 	ln -fs ~/.local/Tools/* ~/.local/bin/ && unlink ~/.local/bin/README.md
 
@@ -51,6 +48,6 @@ cd ~/.local/Tools/ &&
 rm -rf ~/.config/nvim
 cp -r ~/configure/nvim ~/.config/nvim
 
-# Nightly rust toolchain
-[[ -d ~/.rustup ]] && [[ -d ~/.cargo ]] || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)
+# Nightly rust toolchain update
+[[ -d ~/.rustup && -d ~/.cargo ]] || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)
 rustup toolchain install nightly # install nightly toolchain

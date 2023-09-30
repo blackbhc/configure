@@ -40,7 +40,7 @@
 - `bat` for better file view 
 - `exa` for better file list 
 - `lsd` for better file list
-- `aria2c` and `axel`: for fast download
+- `aria2` and `axel`: for fast download
 - `btop` for better ps contral  
 - `ncdu` + `duf` for better disk organization 
 - `cppman` for documentation of standard C++ libraries.
