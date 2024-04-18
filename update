@@ -1,5 +1,4 @@
 #! /bin/bash
-rm -f ~/.vimrc ~/.tmux.config
 git submodule update --init --recursive --depth=1
 cd ~/configure && git pull && git submodule update --remote --depth=1
 
@@ -9,13 +8,9 @@ cd ~/configure && git pull && git submodule update --remote --depth=1
 # tmux config
 ln -sf ~/configure/tmux.conf ~/.tmux.conf
 
-# zsh plugin config
-[[ -d ~/.oh-my-zsh ]] || (wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh)
-[[ -d ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting ]] || git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-[[ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]] || git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-[[ -d ~/.oh-my-zsh/custom/plugins/history-search-multi-word ]] || git clone --depth=1 https://github.com/zdharma-continuum/history-search-multi-word ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/history-search-multi-word
-[[ -d ~/.oh-my-zsh/powerlevel10k ]] || (git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/powerlevel10k && echo 'source ~/.oh-my-zsh/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc)
-[[ -d ~/.oh-my-zsh/custom/plugins/zsh_codex ]] || git clone https://github.com/tom-doerr/zsh_codex.git ~/.oh-my-zsh/custom/plugins/zsh_codex
+# fish config
+rm ~/.config/fish/config.fish
+cp ~/configure/config.fish ~/.config/fish/config.fish
 
 # wezterm config
 [[ -f ~/.wezterm.lua ]] || ln -s ~/configure/wezterm.lua ~/.wezterm.lua
@@ -33,21 +28,16 @@ if ! command -v zoxide 2>/dev/null 1>/dev/null; then
 	fi
 fi
 
+# starship config
+rm ~/.config/starship.toml
+cp ~/configure/starship.toml ~/.config/starship.toml
+
 # development tools config
 ## black
 [[ -d ~/.config/black && -f ~/.config/black/.pyproject.toml ]] || (mkdir -p ~/.config/black && ln -s ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml)
 ## clang-format
 [[ -f ~/.clang-format ]] || ln -s ~/configure/format/clang-format ~/.clang-format
 
-# personal tool for work
-[[ -d ~/.local/Tools ]] || (git clone git@github.com:blackbhc/tools.git ~/.local/Tools --depth=1)
-cd ~/.local/Tools/ &&
-	ln -fs ~/.local/Tools/* ~/.local/bin/ && unlink ~/.local/bin/README.md
-
 # LazyVim config
 rm -rf ~/.config/nvim
 cp -r ~/configure/nvim ~/.config/nvim
-
-# Nightly rust toolchain update
-[[ -d ~/.rustup && -d ~/.cargo ]] || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh)
-rustup toolchain install nightly # install nightly toolchain
