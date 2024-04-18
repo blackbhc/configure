@@ -9,7 +9,7 @@ cd ~/configure && git pull && git submodule update --remote --depth=1
 ln -sf ~/configure/tmux.conf ~/.tmux.conf
 
 # fish config
-rm ~/.config/fish/config.fish
+rm -f ~/.config/fish/config.fish
 cp ~/configure/config.fish ~/.config/fish/config.fish
 
 # wezterm config
@@ -29,7 +29,7 @@ if ! command -v zoxide 2>/dev/null 1>/dev/null; then
 fi
 
 # starship config
-rm ~/.config/starship.toml
+rm -f ~/.config/starship.toml
 cp ~/configure/starship.toml ~/.config/starship.toml
 
 # development tools config
