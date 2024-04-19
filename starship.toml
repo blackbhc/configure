@@ -42,7 +42,6 @@ style = "bg:#a3aed2 fg:#090c0c"
 disabled = false # Disabled by default
 [os.symbols]
 Macos = " "
-Void = "  "
 Arch = " "
 CentOS = "󱄚 "
 Debian = " "
