@@ -8,6 +8,11 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 alias ls="lsd"
+alias ll="lsd -l"
+alias l="lsd -la"
+alias la="lsd -la"
+alias lt="lsd --tree"
+alias lta="lsd --tree -a"
 if type -q python3
     alias py="python3"
 end

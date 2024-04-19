@@ -49,7 +49,7 @@
 - `bat` for better file view
 - `lsd` for better file list
 - `aria2` and `axel`: for fast download
-- `btop` for better ps contral
+- `btop` and `btm`: for processes contral
 - `ncdu` + `duf` for better disk organization
 - `cppman` for documentation of standard C++ libraries.
 - `shellcheck` for shell script syntax checking.
