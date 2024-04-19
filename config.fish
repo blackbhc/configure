@@ -8,14 +8,19 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 alias ls="lsd"
-if command -q nvim
+if type -q python3
+    alias py="python3"
+end
+if type -q ipython
+    alias ipy="ipython"
+end
+if type -q nvim
     alias vi="nvim"
     export EDITOR=nvim
-else if command -q vim
+else if type -q vim
     alias vi="vim"
     export EDITOR=vim
 end
-
 function mkcd
     mkdir -p $argv
     and cd $argv[-1]
@@ -49,6 +54,11 @@ alias tkss="tmux kill-session -t"
 alias ic="imgcat"
 alias a2="aria2c"
 
-# Start others
+# start others
 zoxide init fish | source
 starship init fish | source
+
+# load local configuration files
+if test -e ~/.local/local.fish
+    source ~/.local/local.fish
+end
