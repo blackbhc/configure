@@ -33,7 +33,7 @@ $cmd_duration\
 [username]
 show_always = true
 style_user = "bg:#a3b9f2 fg:#090c0c"
-style_root = "bg:#a3aed2 fg:#090c0c"
+style_root = "bg:#a3b9f2 fg:#090c0c"
 format = '[$user ]($style)'
 disabled = false
 
