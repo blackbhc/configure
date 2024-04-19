@@ -2,6 +2,11 @@
 set -gx PATH ~/.local/bin $PATH
 set -gx PATH /opt/homebrew/bin $PATH
 
+# load local configuration files
+if test -e ~/.local/local.fish
+    source ~/.local/local.fish
+end
+
 # My aliases
 ## basic
 alias rm="rm -i"
@@ -64,8 +69,3 @@ alias a2="aria2c"
 # start others
 zoxide init fish | source
 starship init fish | source
-
-# load local configuration files
-if test -e ~/.local/local.fish
-    source ~/.local/local.fish
-end
