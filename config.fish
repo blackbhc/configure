@@ -42,6 +42,8 @@ alias gl="git pull"
 alias glo="git pull origin"
 alias gc="git clone"
 alias gp="git push"
+alias grs="git restore"
+alias grst="git restore --staged"
 alias gpo="git push origin"
 alias glog="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat"
 ## tmux
