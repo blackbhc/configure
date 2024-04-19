@@ -33,7 +33,7 @@
 
 - compiler: `clang` > `gcc` > `icx` for test, `gcc` for release, and `icx` for HPC applications.
 - debugger: `gdb`
-- build system: `SCons` > `cmake` + `ninja`
+- build system: `SCons` and `xmake` > `cmake` + `ninja`
 - python package manager: `miniconda` + `mamba` > `pip`
 
 ### Version contral
