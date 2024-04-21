@@ -66,6 +66,9 @@ alias tkss="tmux kill-session -t"
 alias ic="imgcat"
 alias a2="aria2c"
 
+# no intro
+set --universal fish_greeting
+
 # start others
 zoxide init fish | source
 starship init fish | source
