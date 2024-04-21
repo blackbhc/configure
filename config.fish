@@ -9,9 +9,6 @@ end
 
 # My aliases
 ## basic
-alias rm="rm -i"
-alias cp="cp -i"
-alias mv="mv -i"
 alias ls="lsd"
 alias ll="lsd -l"
 alias l="lsd -la"
