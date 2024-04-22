@@ -15,7 +15,8 @@ ln -sf ~/configure/config.fish ~/.config/fish/config.fish
 [[ -f ~/.wezterm.lua ]] || ln -s ~/configure/wezterm.lua ~/.wezterm.lua
 
 # git config
-[[ -f ~/.gitconfig ]] || ln -s ~/configure/gitconfig ~/.gitconfig
+ln -sf ~/configure/gitconfig ~/.gitconfig
+ln -sf ~/configure/gitignore_global ~/.gitignore_global 
 
 # zoxide config
 if ! command -v zoxide 2>/dev/null 1>/dev/null; then
