@@ -16,7 +16,7 @@ ln -sf ~/configure/config.fish ~/.config/fish/config.fish
 
 # git config
 ln -sf ~/configure/gitconfig ~/.gitconfig
-ln -sf ~/configure/gitignore_global ~/.gitignore_global 
+ln -sf ~/configure/gitignore_global ~/.gitignore_global
 
 # zoxide config
 if ! command -v zoxide 2>/dev/null 1>/dev/null; then
@@ -27,9 +27,6 @@ if ! command -v zoxide 2>/dev/null 1>/dev/null; then
 		echo 'eval "$(zoxide init zsh)"' >>~/.zshrc
 	fi
 fi
-
-# starship config
-ln -sf ~/configure/starship.toml ~/.config/starship.toml
 
 # development tools config
 ## black

@@ -9,6 +9,8 @@ end
 
 # My aliases
 ## basic
+alias rm="rm -i"
+alias mv="mv -i"
 alias ls="lsd"
 alias ll="lsd -l"
 alias l="lsd -la"
@@ -32,6 +34,7 @@ function mkcd
     mkdir -p $argv
     and cd $argv[-1]
 end
+alias emacs="emacs -nw"
 ## git
 alias gst="git status"
 alias gd="git diff"
