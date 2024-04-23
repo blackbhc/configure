@@ -37,3 +37,7 @@ fi
 # LazyVim config
 rm -rf ~/.config/nvim
 cp -r ~/configure/nvim ~/.config/nvim
+
+# emacs config
+mkdir ~/.emacs.d
+cp -r ./emacs.d/* ~/.emacs.d/
