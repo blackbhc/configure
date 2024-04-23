@@ -12,11 +12,12 @@
 (setq make-backup-files nil)                           ; no backup for every files
 (add-hook 'prog-mode-hook #'hs-minor-mode)             ; fold code blocks
 (global-display-line-numbers-mode 1)                   ; show line numbers in windows
+(tool-bar-mode -1)                                     ; no toolbar
 (when (display-graphic-p) (toggle-scroll-bar -1))      ; no scroll bar for GUI
 (savehist-mode 1)                                      ; save buffer history
 (set-frame-parameter (selected-frame) 'alpha '(85 85)) ; transparency 
 (add-to-list 'default-frame-alist '(alpha 85 85))
-(set-face-attribute 'default nil :font "Monospace-16" )
+(set-frame-font "Menlo:size=15")
 ;(set-face-attribute 'default nil :background "black"   ; tranparent backgroud
 ;  :foreground "white" :height 180)
 (provide 'global)
