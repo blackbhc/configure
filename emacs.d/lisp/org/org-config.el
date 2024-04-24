@@ -10,9 +10,9 @@
 
 ;; key-binds
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
 
 ;; todo items
 (setq org-todo-keywords
@@ -25,4 +25,18 @@
 ;; global tags 
 (setq org-tag-alist '(("work" . ?w) ("study" . ?s) ("learn" . ?l) ("life" . ?e)))
 
+;; captures
+(global-set-key "\C-cc" 'org-capture)
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Documents/Orgs/gtd.org" "Tasks")
+         "* TODO %?\n %T\n %i\n %a")
+        ("c" "Idea of computer" entry (file+datetree "~/Documents/Orgs/idea.org" "Computer")
+         "* %?\n %T\n %i\n %a")
+        ("m" "Idea of mathematics" entry (file+datetree "~/Documents/Orgs/idea.org" "Math")
+         "* %?\n %T\n %i\n %a")
+        ("p" "Idea of physics" entry (file+datetree "~/Documents/Orgs/idea.org" "Physics")
+         "* %?\n %T\n %i\n %a")))
+
+;; enable indent-mode by default
+(add-hook 'org-mode-hook 'org-indent-mode)
 (provide 'org-config)
