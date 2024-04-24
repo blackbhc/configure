@@ -21,7 +21,7 @@
         ff = only
 
 [core]
-    excludesfile = /Users/blackbhc/.gitignore_global
+	excludesFile = ~/.gitignore_global
     pager = delta
 
 [interactive]
