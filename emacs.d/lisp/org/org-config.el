@@ -3,11 +3,6 @@
 ;; 
 ;;; Code:
 
-
-;; mobile org path
-(setq org-mobile-directory 
-      "~/Library/Mobile Documents/iCloud~com~mobileorg~mobileorg/Documents")
-
 ;; key-binds
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 (global-set-key (kbd "C-c l") #'org-store-link)
