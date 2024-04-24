@@ -23,7 +23,7 @@
 (setq org-log-done 'note) ; add a note for todo status switch
 
 ;; global tags 
-(setq org-tag-alist '(("work" . ?w) ("study" . ?s) ("learn" . ?l) ("life" . ?e)))
+(setq org-tag-alist '(("@Work" . ?w) ("@Study" . ?s) ("@Learn" . ?l) ("@Life" . ?e)))
 
 ;; captures
 (global-set-key "\C-cc" 'org-capture)
