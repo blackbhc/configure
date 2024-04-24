@@ -15,6 +15,7 @@
 (add-to-list 'load-path (expand-file-name "lisp/appearance" user-emacs-directory))   ; appearance related
 (add-to-list 'load-path (expand-file-name "lisp/editing" user-emacs-directory))      ; editting related
 (add-to-list 'load-path (expand-file-name "lisp/keymaps" user-emacs-directory))      ; keymaps related
+(add-to-list 'load-path (expand-file-name "lisp/org" user-emacs-directory))      ; keymaps related
 
 ;; Enable with t if you prefer
 (defconst *spell-check-support-enabled* nil) 
@@ -55,6 +56,8 @@
 (require 'modeline)
 (require 'minibuffer)
 (require 'startup)
+;; org-mode config 
+(require 'org-config)
 
 ;; custom files
 (setq custom-file "~/.emacs.d/lisp/appearance/custom.el")
