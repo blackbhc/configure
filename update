@@ -39,7 +39,7 @@ rm -rf ~/.config/nvim
 cp -r ~/configure/nvim ~/.config/nvim
 
 # emacs config
-mkdir ~/.emacs.d
+mkdir -p ~/.emacs.d
 rm -rf ~/.emacs.d/lisp/
 cp ~/configure/emacs.d/init.el ~/.emacs.d/init.el
 cp -r ~/configure/emacs.d/lisp ~/.emacs.d/lisp
