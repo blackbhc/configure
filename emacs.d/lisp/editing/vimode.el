@@ -5,7 +5,8 @@
 
 (use-package evil
   :ensure t
-  :hook
-  (prog-mode . evil-mode))
+  :bind
+    (:map global-map
+        ("C-c M-v" . evil-mode)))
 
 (provide 'vimode)
