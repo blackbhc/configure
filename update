@@ -40,4 +40,5 @@ cp -r ~/configure/nvim ~/.config/nvim
 
 # emacs config
 mkdir ~/.emacs.d
-cp -r ./emacs.d/* ~/.emacs.d/
+cp ./emacs.d/init.el ~/.emacs.d/
+cp -r ./emacs.d/lisp/ ~/.emacs.d/
