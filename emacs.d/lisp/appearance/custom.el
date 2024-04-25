@@ -6,6 +6,7 @@
 (load-theme 'exotica t)
   
 (use-package all-the-icons
+  :ensure t
   :if (display-graphic-p))
 
 (custom-set-variables
