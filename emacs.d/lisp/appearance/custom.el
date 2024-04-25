@@ -1,26 +1,10 @@
-(use-package doom-themes
+(use-package exotica-theme
   :ensure t
   :config
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold nil    ; if nil, bold is universally disabled
-	doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-xcode t)
-  (doom-themes-treemacs-config))
+  (setq exotica-theme-enable-italics t))
 
+(load-theme 'exotica t)
+  
 (use-package all-the-icons
   :if (display-graphic-p))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default))
- '(package-selected-packages
-   '(treemacs-all-the-icons doom-themes yasnippet-snippets which-key use-package-hydra undo-tree treemacs-projectile smart-mode-line rainbow-delimiters mwim lsp-ui lsp-treemacs lsp-ivy evil dashboard counsel company-box amx)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
