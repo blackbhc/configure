@@ -18,6 +18,4 @@
 (set-frame-parameter (selected-frame) 'alpha '(85 85)) ; transparency 
 (add-to-list 'default-frame-alist '(alpha 85 85))
 (set-frame-font "Menlo:size=15")
-;(set-face-attribute 'default nil :background "black"   ; tranparent backgroud
-;  :foreground "white" :height 180)
 (provide 'global)

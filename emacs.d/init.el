@@ -36,6 +36,10 @@
 (package-initialize)
 (eval-when-compile (require 'use-package))
 
+;; custom files
+(setq custom-file "~/.emacs.d/lisp/appearance/custom.el")
+(load custom-file)
+
 ;;; Individual part
 ;; core enhance part
 (require 'global)
@@ -52,15 +56,13 @@
 (require 'format)
 (require 'lsp)
 (require 'tree)
+(require 'indent)
+(require 'lastplace)
 ;; appearance part
 (require 'modeline)
 (require 'minibuffer)
 (require 'startup)
 ;; org-mode config 
 (require 'org-config)
-
-;; custom files
-(setq custom-file "~/.emacs.d/lisp/appearance/custom.el")
-(load custom-file)
 
 (provide 'init)
