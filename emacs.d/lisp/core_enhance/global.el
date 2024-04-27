@@ -17,5 +17,5 @@
 (savehist-mode 1)                                      ; save buffer history
 (set-frame-parameter (selected-frame) 'alpha '(85 85)) ; transparency 
 (add-to-list 'default-frame-alist '(alpha 85 85))
-(set-frame-font "Menlo:size=15")
+(set-frame-font "JetBrains Mono:size=16")
 (provide 'global)
