@@ -34,4 +34,9 @@
 
 ;; enable indent-mode by default
 (add-hook 'org-mode-hook 'org-indent-mode)
+
+;; config agenda files
+(custom-set-variables
+ '(org-agenda-files (list "~/Documents/Orgs" "~/Documents/Orgs/math" "~/Documents/Orgs/physics" "~/Documents/Orgs/projects")))
+
 (provide 'org-config)
