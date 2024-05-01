@@ -1,9 +1,8 @@
-(use-package exotica-theme
+(use-package dracula-theme
   :ensure t
-  :config
-  (setq exotica-theme-enable-italics t))
+  :config)
 
-(load-theme 'exotica t)
+(load-theme 'dracula t)
   
 (use-package all-the-icons
   :ensure t
