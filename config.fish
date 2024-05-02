@@ -71,4 +71,3 @@ set --universal fish_greeting
 
 # start others
 zoxide init fish | source
-starship init fish | source
