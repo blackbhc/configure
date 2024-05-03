@@ -13,7 +13,7 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)" "CANCELED(c)") ; ordinary
         (sequence "BUG(b)" "|" "FIXED(f)")               ; programming
-        (sequence "SURVEY(s)" "EXPLORE(e)" "REVIEW(r)" "SUMMARY(y)" "|" "REPORT(p)")       ; study
+        (sequence "SURVEY(s)" "EXPLORE(e)" "SUMMARY(y)" "|" "REPORT(p)" "REVIEW(r)")       ; study
         ))
 (setq org-log-done 'note) ; add a note for todo status switch
 
