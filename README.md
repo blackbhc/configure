@@ -5,7 +5,7 @@
 - dir `nvim`: configuration files of `neovim`, it's a fork of [LazyVim](https://github.com/folke/lazy.nvim).
 - `update`: executable script to setup the working environment.
 - `wezterm.lua`: configuration file of `wezterm`.
-- dir `format`: configuration for some formatters.
+- dir `format`: configurations for some formatters.
 - `tmux.conf`: configuration of `tmux`.
 - `starship.toml`: configuration of `starship`.
 
@@ -23,7 +23,7 @@
 
 ### Shell
 
-- `fish` + [starship](https://github.com/starship/starship)
+- `fish`
 
 ### Editor
 
@@ -55,3 +55,4 @@
 - `shellcheck` for shell script syntax checking.
 - [`black`](https://github.com/psf/black) for formatting python scripts, `format/pyproject.toml` for configuration.
 - `clang-format`: for formatting of c++, java and some other languages, `format/clang-format` for configuration..
+- `ripgrep`: for string search. 
