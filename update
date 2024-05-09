@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 git submodule update --init --recursive --depth=1
 cd ~/configure && git pull && git submodule update --remote --depth=1
 
@@ -11,22 +11,12 @@ ln -sf ~/configure/tmux.conf ~/.tmux.conf
 # fish config
 ln -sf ~/configure/config.fish ~/.config/fish/config.fish
 
-# wezterm config
-[[ -f ~/.wezterm.lua ]] || ln -s ~/configure/wezterm.lua ~/.wezterm.lua
+# alacritty config
+[[ -f ~/.config/alacritty/alacritty.toml ]] || (mkdir -p ~/.config/alacritty && ln -sf ~/configure/alacritty.toml ~/.config/alacritty/alacritty.toml)
 
 # git config
 ln -sf ~/configure/gitconfig ~/.gitconfig
 ln -sf ~/configure/gitignore_global ~/.gitignore_global
-
-# zoxide config
-if ! command -v zoxide 2>/dev/null 1>/dev/null; then
-	curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-	if [[ $SHELL == '/bin/bash' ]]; then
-		echo 'eval "$(zoxide init bash)"' >>~/.bashrc
-	elif [[ $SHELL == '/bin/zsh' ]]; then
-		echo 'eval "$(zoxide init zsh)"' >>~/.zshrc
-	fi
-fi
 
 # development tools config
 ## black
