@@ -11,8 +11,6 @@ fi
 # Alias
 alias ls="lsd"
 alias vi="nvim"
-alias rm="rm -i"
-alias mv="mv -i"
 alias ls="lsd"
 alias ll="lsd -l"
 alias l="lsd -la"
