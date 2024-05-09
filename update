@@ -11,6 +11,9 @@ ln -sf ~/configure/tmux.conf ~/.tmux.conf
 # fish config
 ln -sf ~/configure/config.fish ~/.config/fish/config.fish
 
+# zsh config
+ln -sf ~/configure/zshrc ~/.zshrc
+
 # alacritty config
 [[ -d ~/.config/alacritty ]] || mkdir -p ~/.config/alacritty
 [[ -d ~/.config/alacritty/themes ]] || git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
