@@ -44,5 +44,4 @@ mode = "~Search"
 mods = "Shift|Control"
 
 [shell]
-# program = "/bin/zsh"
-program = "/opt/homebrew/bin/fish"
+program = "/bin/zsh"
