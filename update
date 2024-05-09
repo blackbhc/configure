@@ -12,8 +12,8 @@ ln -sf ~/configure/tmux.conf ~/.tmux.conf
 ln -sf ~/configure/config.fish ~/.config/fish/config.fish
 
 # alacritty config
-[[-d ~/.config/alacritty ]] || mkdir -p ~/.config/alacritty
-[[-d ~/.config/alacritty/themes ]] || git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+[[ -d ~/.config/alacritty ]] || mkdir -p ~/.config/alacritty
+[[ -d ~/.config/alacritty/themes ]] || git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 [[ -f ~/.config/alacritty/alacritty.toml ]] || ln -sf ~/configure/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # git config
