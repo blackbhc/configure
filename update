@@ -12,6 +12,7 @@ ln -sf ~/configure/tmux.conf ~/.tmux.conf
 ln -sf ~/configure/config.fish ~/.config/fish/config.fish
 
 # zsh config
+[[ -d ~/.local/share/zinit ]] bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 ln -sf ~/configure/zshrc ~/.zshrc
 
 # alacritty config
