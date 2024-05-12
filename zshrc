@@ -86,9 +86,13 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
-# Two regular plugins loaded without investigating.
+# plugins
+autoload -Uz compinit
+compinit
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
+zinit ice atload"zpcdreplay" atclone'./zplug.zsh'
+zinit light g-plane/zsh-yarn-autocompletions
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
 
