@@ -13,7 +13,7 @@
 
 ### Terminal:
 
-- [`wezterm`](https://wezfurlong.org/wezterm/)
+- [alacritty](https://github.com/alacritty/alacritty) or [`wezterm`](https://wezfurlong.org/wezterm/)
 
 ### Browser
 
@@ -55,4 +55,4 @@
 - `shellcheck` for shell script syntax checking.
 - [`black`](https://github.com/psf/black) for formatting python scripts, `format/pyproject.toml` for configuration.
 - `clang-format`: for formatting of c++, java and some other languages, `format/clang-format` for configuration..
-- `ripgrep`: for string search. 
+- `ripgrep`: for string search.
