@@ -30,7 +30,7 @@ config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
 -- font setting ups
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 15
+config.font_size = 16
 -- add scroll bar
 config.enable_scroll_bar = true
 config.scrollback_lines = 10000
