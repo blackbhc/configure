@@ -48,6 +48,7 @@ alias tkss="tmux kill-session -t"
 ## others
 alias ic="imgcat"
 alias a2="aria2c"
+alias cppcheck="cppcheck --enable=warning,style,performance,portability --std=c++20"
 function mkcd
 {
   dir="$*";
