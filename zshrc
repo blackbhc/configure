@@ -55,8 +55,7 @@ function mkcd
 }
 ## Development tools
 alias cppcheck="cppcheck --enable=warning,style,performance,portability --std=c++20"
-alias clang-tidy="clang-tidy --checks='bugprone-*,clang-analyzer-*,concurrency-*,cppcoreguidelines-*,\
-    misc-*,modernize-*,mpi*,performance-*,readability-*' --warnings-as-errors='mpi-*,performance-*' --use-color"
+alias clang-tidy="clang-tidy --checks='bugprone-*,clang-analyzer-*,concurrency-*,misc-*,modernize-*,mpi*,performance-*,readability-*' --warnings-as-errors='mpi-*,performance-*' --use-color"
 
 # History file 
 HISTFILE="$HOME/.zsh_history"
