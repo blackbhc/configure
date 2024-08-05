@@ -48,12 +48,15 @@ alias tkss="tmux kill-session -t"
 ## others
 alias ic="imgcat"
 alias a2="aria2c"
-alias cppcheck="cppcheck --enable=warning,style,performance,portability --std=c++20"
 function mkcd
 {
   dir="$*";
   mkdir -p "$dir" && cd "$dir";
 }
+## Development tools
+alias cppcheck="cppcheck --enable=warning,style,performance,portability --std=c++20"
+alias clang-tidy="clang-tidy --checks='bugprone-*,clang-analyzer-*,concurrency-*,cppcoreguidelines-*,\
+    misc-*,modernize-*,mpi*,performance-*,readability-*' --warnings-as-errors='mpi-*,performance-*' --use-color"
 
 # History file 
 HISTFILE="$HOME/.zsh_history"
