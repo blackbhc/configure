@@ -59,7 +59,7 @@ alias clang-tidy="clang-tidy --checks='bugprone-*,clang-analyzer-*,concurrency-*
 function project
 {
   dir="$*";
-  cp -r $HOME/configure/demos/cmake_demo "$dir" && cd "$dir";
+  cp -r $HOME/configure/demos/cmake_demo "$dir" && cd "$dir" && git init;
 }
 
 # History file 
