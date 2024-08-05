@@ -56,6 +56,11 @@ function mkcd
 ## Development tools
 alias cppcheck="cppcheck --enable=warning,style,performance,portability --std=c++20"
 alias clang-tidy="clang-tidy --checks='bugprone-*,clang-analyzer-*,concurrency-*,misc-*,modernize-*,mpi*,performance-*,readability-*' --warnings-as-errors='mpi-*,performance-*' --use-color"
+function project
+{
+  dir="$*";
+  cp -r $HOME/configure/demos/cmake_demo "$dir" && cd "$dir";
+}
 
 # History file 
 HISTFILE="$HOME/.zsh_history"
