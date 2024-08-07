@@ -38,3 +38,6 @@ mkdir -p ~/.emacs.d
 rm -rf ~/.emacs.d/lisp/
 cp ~/configure/emacs.d/init.el ~/.emacs.d/init.el
 cp -r ~/configure/emacs.d/lisp ~/.emacs.d/lisp
+
+# jupyter configure
+[[ -f ~/.ipython/profile_default/startup/start.py ]] || ln -sf ~/configure/start.py ~/.ipython/profile_default/startup/start.py
