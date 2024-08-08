@@ -6,38 +6,40 @@ cd ~/configure && git pull && git submodule update --remote --depth=1
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
 
 # tmux config
-ln -sf ~/configure/tmux.conf ~/.tmux.conf
+ln -sf ~/configure/software/tmux.conf ~/.tmux.conf
 
 # fish config
-ln -sf ~/configure/config.fish ~/.config/fish/config.fish
+ln -sf ~/configure/software/config.fish ~/.config/fish/config.fish
 
 # zsh config
-ln -sf ~/configure/zshrc ~/.zshrc
+ln -sf ~/configure/zshrc ~/.local/zshrc
 
 # alacritty config
 [[ -d ~/.config/alacritty ]] || mkdir -p ~/.config/alacritty
 [[ -d ~/.config/alacritty/themes ]] || git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
-[[ -f ~/.config/alacritty/alacritty.toml ]] || ln -sf ~/configure/alacritty.toml ~/.config/alacritty/alacritty.toml
+ln -sf ~/configure/software/alacritty.toml ~/.config/alacritty/alacritty.toml
+
+# wezterm config
+ln -sf ~/configure/software/wezterm.lua ~/.wezterm.lua
 
 # git config
-ln -sf ~/configure/gitconfig ~/.gitconfig
-ln -sf ~/configure/gitignore_global ~/.gitignore_global
+ln -sf ~/configure/software/gitconfig ~/.gitconfig
+ln -sf ~/configure/software/gitignore_global ~/.gitignore_global
 
 # development tools config
 ## black
-[[ -d ~/.config/black && -f ~/.config/black/.pyproject.toml ]] || (mkdir -p ~/.config/black && ln -s ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml)
+[[ -d ~/.config/black ]] || mkdir -p ~/.config/black
+ln -sf ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml
+
 ## clang-format
-[[ -f ~/.clang-format ]] || ln -s ~/configure/format/clang-format ~/.clang-format
+ln -sf ~/configure/software/format/clang-format ~/.clang-format
 
 # LazyVim config
-rm -rf ~/.config/nvim
-cp -r ~/configure/nvim ~/.config/nvim
+ln -sf ~/configure/nvim ~/.config/nvim
 
 # emacs config
-mkdir -p ~/.emacs.d
-rm -rf ~/.emacs.d/lisp/
-cp ~/configure/emacs.d/init.el ~/.emacs.d/init.el
-cp -r ~/configure/emacs.d/lisp ~/.emacs.d/lisp
+ln -sf ~/configure/software/emacs.d ~/.emacs.d
 
 # jupyter configure
-[[ -f ~/.ipython/profile_default/startup/start.py ]] || ln -sf ~/configure/start.py ~/.ipython/profile_default/startup/start.py
+[[ -d ~/.ipython/profile_default/startup ]] || mkdir -p ~/.ipython/profile_default/startup
+ln -sf ~/configure/software/start.py ~/.ipython/profile_default/startup/start.py
