@@ -12,7 +12,7 @@ ln -sf ~/configure/software/tmux.conf ~/.tmux.conf
 ln -sf ~/configure/software/config.fish ~/.config/fish/config.fish
 
 # zsh config
-ln -sf ~/configure/zshrc ~/.local/zshrc
+ln -sf ~/configure/software/zshrc ~/.local/zshrc
 
 # alacritty config
 [[ -d ~/.config/alacritty ]] || mkdir -p ~/.config/alacritty
