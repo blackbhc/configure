@@ -15,6 +15,11 @@ if(NOT CMAKE_BUILD_TYPE)
       Debug
       CACHE STRING "Build type" FORCE)
 endif()
+# export the compilation commands
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+
+# COMPILATION FLAGS PART
 # customized debug flags: default one only includes -g
 set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wextra -Wpedantic -Werror -fPIC")
 # print fundamental flags: -g, -O, and whether -DNDEBUG
