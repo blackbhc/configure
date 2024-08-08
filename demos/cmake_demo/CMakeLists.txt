@@ -1,5 +1,4 @@
 # GLOBAL PART
-
 # minimal version of cmake
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 # project name, language
@@ -10,7 +9,6 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_EXTENSIONS OFF)
 # check the compiler support the specified standard
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 # Build type, default: Debug
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE
@@ -30,7 +28,8 @@ message(
   STATUS
     "C++ flags, minimal Release configuration: ${CMAKE_CXX_FLAGS_MINSIZEREL}")
 
-# Targets
+
+# TARGET PART
 # Excutable
 add_executable(hello src/main.cpp)
 # target_link_libraries(hello message)
@@ -39,7 +38,7 @@ add_library(message
   SHARED
     include/message.hpp
     src/message.cpp
-  )
+)
 # Library with the same name
 #[[ add_library(message-shared
   SHARED
@@ -62,20 +61,67 @@ set_target_properties(message-static
  ) ]]
 
 
-# Unit tests
+# UNIT TESTS
 # C++ programes
 enable_testing()
 add_executable(test_hello ./validation/test_hello.cpp)
 add_test(NAME test_hello COMMAND $<TARGET_FILE:test_hello>)
 # python scripts
-find_package (Python COMPONENTS Interpreter Development)
+find_package(Python COMPONENTS Interpreter Development)
 message(
   STATUS
     "Find python interpreter: ${Python_EXECUTABLE}")
 add_test(
   NAME python_test
   COMMAND ${Python_EXECUTABLE} ../validation/test_hello.py
+)
+
+
+# iNSTALL PART
+include(GNUInstallDirs)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY
+ ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY
+ ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY
+ ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
+# Offer the user the choice of overriding the installation directories
+set(INSTALL_LIBDIR ${CMAKE_INSTALL_LIBDIR} CACHE PATH
+    "Installation directory for libraries")
+set(INSTALL_BINDIR ${CMAKE_INSTALL_BINDIR} CACHE PATH "Installation directory for executables")
+set(INSTALL_INCLUDEDIR ${CMAKE_INSTALL_INCLUDEDIR} CACHE PATH "Installation directory for header files")
+set(DEF_INSTALL_CMAKEDIR CMake)
+set(INSTALL_CMAKEDIR ${DEF_INSTALL_CMAKEDIR} CACHE PATH "Installation directory for CMake files")
+# Report to user
+foreach(p LIB BIN INCLUDE CMAKE)
+    file(TO_NATIVE_PATH ${CMAKE_INSTALL_PREFIX}/${INSTALL_${p}DIR} _path )
+    message(STATUS "Installing ${p} components to ${_path}")
+    unset(_path)
+endforeach()
+install(
+  TARGETS
+    message
+    hello
+  ARCHIVE
+    DESTINATION ${INSTALL_LIBDIR}
+    COMPONENT lib
+  RUNTIME
+    DESTINATION ${INSTALL_BINDIR}
+    COMPONENT bin
+  LIBRARY
+    DESTINATION ${INSTALL_LIBDIR}
+    COMPONENT lib
+  PUBLIC_HEADER
+    DESTINATION ${INSTALL_INCLUDEDIR}/message
+    COMPONENT dev
   )
+# Offer the user the choice of overriding the installation directories
+set(INSTALL_LIBDIR ${CMAKE_INSTALL_LIBDIR} CACHE PATH
+"Installation directory for libraries")
+set(INSTALL_BINDIR ${CMAKE_INSTALL_BINDIR} CACHE PATH
+"Installation directory for executables")
+set(INSTALL_INCLUDEDIR ${CMAKE_INSTALL_INCLUDEDIR} CACHE PATH
+"Installation directory for header files")
 
 
 #[[
