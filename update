@@ -38,7 +38,7 @@ ln -sf ~/configure/software/format/clang-format ~/.clang-format
 ln -sf ~/configure/nvim ~/.config/nvim
 
 # emacs config
-ln -sf ~/configure/software/emacs.d ~/.emacs.d
+[[ -d ~/.emacs.d ]] || cp -r ~/configure/software/emacs.d ~/.emacs.d
 
 # jupyter configure
 [[ -d ~/.ipython/profile_default/startup ]] || mkdir -p ~/.ipython/profile_default/startup

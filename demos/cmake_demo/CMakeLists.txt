@@ -31,7 +31,36 @@ message(
     "C++ flags, minimal Release configuration: ${CMAKE_CXX_FLAGS_MINSIZEREL}")
 
 # Targets
+# Excutable
 add_executable(hello src/main.cpp)
+# target_link_libraries(hello message)
+# Library
+add_library(message
+  SHARED
+    include/message.hpp
+    src/message.cpp
+  )
+# Library with the same name
+#[[ add_library(message-shared
+  SHARED
+    $<TARGET_OBJECTS:message-objs>
+ )
+
+set_target_properties(message-shared
+ PROPERTIES
+  OUTPUT_NAME "message"
+ )
+
+add_library(message-static
+ STATIC
+  $<TARGET_OBJECTS:message-objs>
+ )
+
+set_target_properties(message-static
+ PROPERTIES
+  OUTPUT_NAME "message"
+ ) ]]
+
 
 # Unit tests
 # C++ programes
