@@ -45,7 +45,7 @@ function mkcd
 }
 ## Development tools
 alias cppcheck="cppcheck --enable=warning,style,performance,portability --std=c++20"
-alias clang-tidy="clang-tidy --checks='bugprone-*,clang-analyzer-*,concurrency-*,misc-*,modernize-*,mpi*,performance-*,readability-*' --warnings-as-errors='mpi-*,performance-*' --use-color"
+alias clang-tidy="clang-tidy --checks='bugprone-*,-bugprone-easily-swappable-parameters,clang-analyzer-*,concurrency-*,misc-*,modernize-*,-modernize-avoid-c-arrays,mpi*,performance-*,readability-*,-readability-identifier-length' --warnings-as-errors='mpi-*,performance-*' --use-color"
 function project
 {
   dir="$*";
