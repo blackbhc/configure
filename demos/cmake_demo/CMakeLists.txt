@@ -33,6 +33,11 @@ message(
 # Excutable
 add_executable(hello src/main.cpp)
 # target_link_libraries(hello message)
+# target_link_options(hello PRIVATE
+#     -fsanitize=address
+#     -fsanitize=leak
+#     -fsanitize=undefined
+# )
 # Library
 add_library(message
   SHARED
