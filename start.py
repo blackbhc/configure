@@ -14,6 +14,7 @@ from scipy.ndimage import zoom
 from scipy.stats import linregress
 import warnings
 from functools import reduce
+from tqdm import tqdm
 
 plt.rcParams.update(
     {
