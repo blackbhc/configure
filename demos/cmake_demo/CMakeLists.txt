@@ -21,7 +21,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # COMPILATION FLAGS PART
 # customized debug flags: default one only includes -g
-set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wextra -Wpedantic -Werror -fPIC")
+set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wextra -Wpedantic -Werror -fPIC -DDEBUG")
 # print fundamental flags: -g, -O, and whether -DNDEBUG
 message(STATUS "C++ flags, Debug configuration: ${CMAKE_CXX_FLAGS_DEBUG}")
 message(STATUS "C++ flags, Release configuration: ${CMAKE_CXX_FLAGS_RELEASE}")
@@ -32,6 +32,11 @@ message(
 message(
   STATUS
     "C++ flags, minimal Release configuration: ${CMAKE_CXX_FLAGS_MINSIZEREL}")
+if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    set(sanitizer_flags "-fsanitize=undefined" "-fsanitize=address")
+else()
+    set(sanitizer_flags "-fsanitize=undefined" "-fsanitize=address" "-fsanitize=leak")
+endif()
 
 
 # TARGET PART
@@ -39,9 +44,7 @@ message(
 add_executable(hello src/main.cpp)
 # target_link_libraries(hello message)
 # target_link_options(hello PRIVATE
-#     -fsanitize=address
-#     -fsanitize=leak
-#     -fsanitize=undefined
+#      ${sanitizer_flags}
 # )
 # Library
 add_library(hellolib
