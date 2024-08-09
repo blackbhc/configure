@@ -44,10 +44,9 @@ add_executable(hello src/main.cpp)
 #     -fsanitize=undefined
 # )
 # Library
-add_library(message
+add_library(hellolib
   SHARED
-    include/message.hpp
-    src/message.cpp
+    src/main.cpp
 )
 # Library with the same name
 #[[ add_library(message-shared
@@ -87,7 +86,10 @@ add_test(
 )
 
 
-# iNSTALL PART
+# INSTALL PART
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set(CMAKE_INSTALL_PREFIX "~/.local" CACHE PATH "install prefix" FORCE)
+endif()
 include(GNUInstallDirs)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY
  ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
@@ -110,8 +112,8 @@ foreach(p LIB BIN INCLUDE CMAKE)
 endforeach()
 install(
   TARGETS
-    message
     hello
+    hellolib
   ARCHIVE
     DESTINATION ${INSTALL_LIBDIR}
     COMPONENT lib
