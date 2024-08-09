@@ -35,7 +35,7 @@ ln -sf ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml
 ln -sf ~/configure/software/format/clang-format ~/.clang-format
 
 # LazyVim config
-ln -sf ~/configure/nvim ~/.config/
+[[ -d ~/.config/nvim ]] || ln -sf ~/configure/nvim ~/.config/
 
 # emacs config
 [[ -d ~/.emacs.d ]] || cp -r ~/configure/software/emacs.d ~/.emacs.d
