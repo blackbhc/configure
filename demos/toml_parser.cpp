@@ -6,13 +6,27 @@ int main()
 {
     auto config = toml::parse_file( "./galotfa.toml" );
 
-    get                                                               key
-        - value pairs use a visitor to iterate over heterogenous data config.for_each(
-            []( auto& key, auto& value ) {
-                if ( string_view( key ).substr( 0, 9 ) == "component" )
-                    std::cout << key << "\n";
-                ( void )value;
-            } );
+    // get key-value pairs use a visitor to iterate over heterogenous data
+    config.for_each( []( auto& key, auto& value ) {
+        if ( string_view( key ).substr( 0, 9 ) == "component" )
+            std::cout << key << "\n";
+        ( void )value;
+    } );
+
+    // get a nested table
+    toml::table orbit = *config[ "orbit" ].as_table();
+    orbit.for_each( []( auto& key, auto& value ) {
+        cout << "Key:" << key << endl;
+        if constexpr ( toml::is_string< decltype( value ) > )
+        {
+            cout << "Value:" << "(" << value.type() << "): " << value << endl;
+        }
+        else if constexpr ( toml::is_node< decltype( value ) > )
+        {
+            cout << "Get a node:" << endl;
+            cout << "Value" << "(type: " << value.type() << "): " << endl << value << endl;
+        }
+    } );
 
     // int
     int maxIter = config[ "global" ][ "maxiter" ].value_or( 0 );
