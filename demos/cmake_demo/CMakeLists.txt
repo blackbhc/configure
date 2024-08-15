@@ -126,7 +126,7 @@ foreach(p LIB BIN INCLUDE CMAKE)
     unset(_path)
 endforeach()
 install(
-    TARGETS hello hellolib
+    TARGETS main hellolib
     ARCHIVE DESTINATION ${INSTALL_LIBDIR} COMPONENT lib
     RUNTIME DESTINATION ${INSTALL_BINDIR} COMPONENT bin
     LIBRARY DESTINATION ${INSTALL_LIBDIR} COMPONENT lib
