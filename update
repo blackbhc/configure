@@ -9,7 +9,7 @@ cd ~/configure && git pull && git submodule update --remote --depth=1
 ln -sf ~/configure/software/tmux.conf ~/.tmux.conf
 
 # fish config
-ln -sf ~/configure/software/config.fish ~/.config/fish/config.fish
+[[ -f ~/.config/fish/config.fish ]] || ln -sf ~/configure/software/config.fish ~/.config/fish/config.fish
 
 # zsh config
 ln -sf ~/configure/software/zshrc ~/.local/zshrc
