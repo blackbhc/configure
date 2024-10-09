@@ -13,7 +13,7 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "ChallengerDeep"
+config.color_scheme = "Alabaster"
 
 -- This is the font configuration.  If unset, we default to the font.
 wezterm.on("update-right-status", function(window, pane)
