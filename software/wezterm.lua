@@ -35,6 +35,6 @@ config.font_size = 16
 config.enable_scroll_bar = true
 config.scrollback_lines = 10000
 config.min_scroll_bar_height = "2cell"
-config.window_background_opacity = 0.8
+config.window_background_opacity = 1.0
 -- and finally, return the configuration to wezterm
 return config
