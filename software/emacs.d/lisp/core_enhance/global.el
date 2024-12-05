@@ -15,7 +15,7 @@
 (tool-bar-mode -1)                                     ; no toolbar
 (when (display-graphic-p) (toggle-scroll-bar -1))      ; no scroll bar for GUI
 (savehist-mode 1)                                      ; save buffer history
-(set-frame-parameter (selected-frame) 'alpha '(95 95)) ; transparency 
-(add-to-list 'default-frame-alist '(alpha 95 95))
+(set-frame-parameter (selected-frame) 'alpha '(100 100)) ; transparency 
+(add-to-list 'default-frame-alist '(alpha 100 100))
 (set-frame-font "JetBrains Mono:size=16")
 (provide 'global)
