@@ -37,6 +37,6 @@
 
 ;; config agenda files
 (custom-set-variables
- '(org-agenda-files (list "~/Documents/Orgs" "~/Documents/Orgs/math" "~/Documents/Orgs/physics" "~/Documents/Orgs/projects")))
+ '(org-agenda-files (list "~/Documents/Orgs" "~/Documents/Orgs/math" "~/Documents/Orgs/physics" "~/Documents/Orgs/projects" "~/Documents/Orgs/studies")))
 
 (provide 'org-config)
