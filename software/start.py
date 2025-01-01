@@ -2,6 +2,7 @@ import numpy as np
 import h5py
 from matplotlib import pyplot as plt
 import matplotlib as mpl
+from matplotlib.ticker import MultipleLocator, AutoMinorLocator
 import imageio
 import scipy as sp
 from scipy.stats import binned_statistic_2d as bin2d
