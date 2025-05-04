@@ -11,6 +11,7 @@ from scipy.stats import linregress
 from scipy.interpolate import UnivariateSpline
 from scipy.interpolate import interp1d
 from scipy.optimize import curve_fit
+from scipy.signal import argrelextrema
 import astropy as ap
 import astropy.coordinates
 from astropy import units as u
