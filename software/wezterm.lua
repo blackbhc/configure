@@ -14,6 +14,7 @@ end
 
 -- For example, changing the color scheme:
 config.color_scheme = "Catppuccin Latte"
+-- config.color_scheme = "ChallengerDeep"
 
 -- This is the font configuration.  If unset, we default to the font.
 wezterm.on("update-right-status", function(window, pane)
