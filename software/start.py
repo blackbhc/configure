@@ -14,7 +14,8 @@ from scipy.interpolate import interp1d
 from scipy.optimize import curve_fit
 from scipy.signal import argrelextrema
 import astropy as ap
-import astropy.coordinates
+import astropy.coordinates as coord
+from astropy.coordinates import SkyCoord, Galactic, Galactocentric
 from astropy import units as u
 from astropy import constants as const
 import warnings
