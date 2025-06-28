@@ -2,8 +2,8 @@
   :ensure t
   :config)
 
-(load-theme 'aliceblue t)
-(enable-theme 'aliceblue)
+(load-theme 'leuven t)
+(enable-theme 'leuven)
   
 (use-package all-the-icons
   :ensure t
