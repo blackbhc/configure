@@ -38,7 +38,7 @@ ln -sf ~/configure/software/format/clang-format ~/.clang-format
 [[ -d ~/.config/nvim ]] || git clone --depth=1 git@github.com:blackbhc/nvim.git ~/.config/nvim
 
 # emacs config
-[[ -d ~/.emacs.d ]] || cp -r ~/configure/software/emacs.d ~/.emacs.d
+[[ -d ~/.emacs.d ]] || git clone --depth=1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # jupyter configure
 [[ -d ~/.ipython/profile_default/startup ]] || mkdir -p ~/.ipython/profile_default/startup
