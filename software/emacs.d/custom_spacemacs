@@ -1,0 +1,60 @@
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(custom-enabled-themes '(spacemacs-light))
+   '(custom-safe-themes
+     '("9af2b1c0728d278281d87dc91ead7f5d9f2287b1ed66ec8941e97ab7a6ab73c0" default))
+   '(package-selected-packages nil))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  )
+
+;; key-binds
+(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
+
+;; todo items
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "|" "DONE(d)" "CANCELED(c)") ; ordinary
+        (sequence "BUG(b)" "|" "FIXED(f)")               ; programming
+        (sequence "SURVEY(s)" "EXPLORE(e)" "SUMMARY(y)" "|" "REPORT(p)" "REVIEW(r)")       ; study
+        ))
+(setq org-log-done 'note) ; add a note for todo status switch
+
+;; global tags 
+(setq org-tag-alist '(("@Work" . ?w) ("@Study" . ?s) ("@Learn" . ?l) ("@Life" . ?e)))
+
+;; captures
+(global-set-key "\C-cc" 'org-capture)
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Documents/Orgs/gtd.org" "Tasks")
+         "* TODO %?\n %T\n %i\n %a")
+        ("c" "Idea of computer" entry (file+datetree "~/Documents/Orgs/idea.org" "Computer")
+         "* %?\n %T\n %i\n %a")
+        ("m" "Idea of mathematics" entry (file+datetree "~/Documents/Orgs/idea.org" "Math")
+         "* %?\n %T\n %i\n %a")
+        ("p" "Idea of physics" entry (file+datetree "~/Documents/Orgs/idea.org" "Physics")
+         "* %?\n %T\n %i\n %a")))
+
+;; enable indent-mode by default
+(add-hook 'org-mode-hook 'org-indent-mode)
+
+;; config agenda files
+(custom-set-variables
+ '(org-agenda-files (list "~/Documents/Orgs" "~/Documents/Orgs/math" "~/Documents/Orgs/physics" "~/Documents/Orgs/projects" "~/Documents/Orgs/studies")))
+
+(set-frame-font "JetBrains Mono:size=16")
+(setq confirm-kill-emacs #'yes-or-no-p)                ; confirm when close
