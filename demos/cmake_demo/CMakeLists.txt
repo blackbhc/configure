@@ -3,8 +3,8 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 # project name, language
 project(demo-project LANGUAGES CXX)
-# standard: C++20
-set(CMAKE_CXX_STANDARD 20)
+# standard: C++23
+set(CMAKE_CXX_STANDARD 23)
 # no compiler dependent extensions
 set(CMAKE_CXX_EXTENSIONS OFF)
 # check the compiler support the specified standard
