@@ -39,7 +39,7 @@ ln -sf ~/configure/software/format/clang-format ~/.clang-format
 
 # emacs config
 [[ -d ~/.emacs.d ]] || git clone --depth=1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
-# cat ~/configure/software/emacs.d/custom_spacemacs >>~/.spacemacs
+cat ~/configure/software/emacs.d/custom_spacemacs >>~/.spacemacs
 
 # jupyter configure
 [[ -d ~/.ipython/profile_default/startup ]] || mkdir -p ~/.ipython/profile_default/startup
