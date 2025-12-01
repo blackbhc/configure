@@ -5,6 +5,9 @@ cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 project(demo-project LANGUAGES CXX)
 # standard: C++23
 set(CMAKE_CXX_STANDARD 23)
+# set up the compiler
+# set(CMAKE_C_COMPILER   gcc)
+# set(CMAKE_CXX_COMPILER g++)
 # no compiler dependent extensions
 set(CMAKE_CXX_EXTENSIONS OFF)
 # check the compiler support the specified standard
@@ -72,7 +75,7 @@ set_target_properties(message-static
 
 # UNIT TESTS
 # C++ programes
-#[[ enable_testing()
+enable_testing()
 add_executable(test_hello ./validation/test_hello.cpp)
 add_test(NAME test_hello COMMAND $<TARGET_FILE:test_hello>)
 # python scripts
@@ -81,7 +84,7 @@ message(STATUS "Find python interpreter: ${Python_EXECUTABLE}")
 add_test(
     NAME python_test
     COMMAND ${Python_EXECUTABLE} ../validation/test_hello.py
-) ]]
+)
 
 # INSTALL PART
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
