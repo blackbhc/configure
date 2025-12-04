@@ -1,9 +1,9 @@
 #include <print>
 
-int main( int argc, char* argv[] )
+auto main( int argc, char* argv[] ) -> int
 {
     ( void )argc;
     ( void )argv;
-    std::println( "Hello world. There are {} arguments.", argc );
+    std::println( "Hello world.", argc );
     return 0;
 }
