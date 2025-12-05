@@ -1,6 +1,6 @@
 #include <print>
 
-auto main( int argc, char* argv[] ) -> int
+int main( int argc, char* argv[] )
 {
     ( void )argc;
     ( void )argv;
