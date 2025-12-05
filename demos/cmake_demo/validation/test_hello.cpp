@@ -1,7 +1,6 @@
 #include <print>
 
-int main()
-{
+int main() {
     std::println( "Hello world." );
     return 0;
 }
