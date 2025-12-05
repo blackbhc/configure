@@ -7,7 +7,7 @@ AccessModifierOffset: -4
 # 开括号(开圆括号、开尖括号、开方括号)后的对齐:  Align, DontAlign, AlwaysBreak(总是在开括号后换行)
 AlignAfterOpenBracket: Align
 # 连续赋值时，对齐所有等号
-AlignConsecutiveAssignments: AcrossComments
+AlignConsecutiveAssignments: Consecutive
 # 连续声明时，对齐所有声明的变量名
 AlignConsecutiveDeclarations: AcrossComments
 # 左对齐逃脱换行(使用反斜杠换行)的反斜杠
@@ -25,7 +25,7 @@ AllowShortCaseLabelsOnASingleLine: false
 # 允许短的函数放在同一行:  None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
 AllowShortFunctionsOnASingleLine: Empty
 # 允许短的if语句保持在同一行
-AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortIfStatementsOnASingleLine: OnlyFirstIf
 # 允许短的循环保持在同一行
 AllowShortLoopsOnASingleLine: false
 # 总是在定义返回类型后换行(deprecated)
@@ -36,25 +36,25 @@ AlwaysBreakAfterReturnType: None
 # 总是在多行string字面量前换行
 AlwaysBreakBeforeMultilineStrings: false
 # 总是在template声明后换行
-AlwaysBreakTemplateDeclarations: MultiLine
+AlwaysBreakTemplateDeclarations: Yes
 # false表示函数实参要么都在同一行，要么都各自一行
 BinPackArguments: true
 # false表示所有形参要么都在同一行，要么都各自一行
-BinPackParameters: BinPack
+BinPackParameters: OnePerLine
 # 大括号换行，只有当BreakBeforeBraces设置为Custom时才有效
 BraceWrapping:
   # class定义后面
   AfterClass: true
   # 控制语句后面
-  AfterControlStatement: MultiLine
+  AfterControlStatement: Always
   # enum定义后面
-  AfterEnum: false
+  AfterEnum: true
   # 函数定义后面
   AfterFunction: true
   # 命名空间定义后面
   AfterNamespace: false
   # ObjC定义后面
-  AfterObjCDeclaration: false
+  AfterObjCDeclaration: true
   # struct定义后面
   AfterStruct: true
   # union定义后面
@@ -77,7 +77,7 @@ BreakBeforeTernaryOperators: true
 # 在构造函数的初始化列表的逗号前换行
 BreakConstructorInitializersBeforeComma: false
 # 每行字符的限制，0表示没有限制
-ColumnLimit: 100
+ColumnLimit: 80
 # 描述具有特殊意义的注释的正则表达式，它不应该被分割为多行或以其它方式改变
 CommentPragmas: "^ IWYU pragma:"
 # 构造函数的初始化列表要么都在同一行，要么都各自一行
