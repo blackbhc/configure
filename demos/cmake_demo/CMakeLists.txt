@@ -3,8 +3,8 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 # project name, language
 project(demo-project LANGUAGES CXX)
-# standard: C++23
-set(CMAKE_CXX_STANDARD 23)
+# standard: C++11
+set(CMAKE_CXX_STANDARD 11)
 # set up the compiler
 set(CMAKE_C_COMPILER   gcc)
 set(CMAKE_CXX_COMPILER g++)
