@@ -87,9 +87,9 @@ ConstructorInitializerIndentWidth: 4
 # 延续的行的缩进宽度
 ContinuationIndentWidth: 4
 # 去除C++11的列表初始化的大括号{后和}前的空格
-Cpp11BracedListStyle: false
+Cpp11BracedListStyle: true
 # 继承最常用的指针和引用的对齐方式
-DerivePointerAlignment: false
+DerivePointerAlignment: true
 # 关闭格式化
 DisableFormat: false
 # 自动检测函数的调用和定义是否被格式为每行一个参数(Experimental)
@@ -164,7 +164,7 @@ SpacesInParentheses: true
 # 在方括号的[后和]前添加空格，lamda表达式和未指明大小的数组的声明不受影响
 SpacesInSquareBrackets: true
 # 标准:  Cpp03, Cpp11, Auto
-Standard: Latest
+Standard: c++17
 # tab宽度
 TabWidth: 4
 # 使用tab字符:  Never, ForIndentation, ForContinuationAndIndentation, Always
