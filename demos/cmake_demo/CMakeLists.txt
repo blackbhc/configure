@@ -49,7 +49,6 @@ endif()
 # TARGET PART
 # Excutable
 add_executable(main src/main.cpp)
-# include_directories(main ${CMAKE_SOURCE_DIR}/include) # /director
 # target_link_libraries(main message)
 # target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/include)
 # target_link_options(main PRIVATE ${sanitizer_flags})
@@ -169,7 +168,7 @@ target_link_libraries(hello-mpi
   )
 
 3. Find all files (non-recursive) under a directory:
-file(GLOB SOURCE_FILES ./src/*.cpp)
+file(GLOB SOURCE_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
 message(
   STATUS
     "All files under src: ${SOURCE_FILES}")
