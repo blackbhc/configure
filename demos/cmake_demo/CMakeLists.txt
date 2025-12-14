@@ -19,7 +19,7 @@ endif()
 # export the compilation commands
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # append the include directory of the whole project
-# include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 
 # COMPILATION FLAGS PART
