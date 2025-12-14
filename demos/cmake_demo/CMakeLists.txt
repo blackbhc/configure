@@ -18,6 +18,9 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 # export the compilation commands
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+# append the include directory of the whole project
+# include_directories(${CMAKE_SOURCE_DIR}/include)
+
 
 # COMPILATION FLAGS PART
 # customized debug flags: default one only includes -g
@@ -46,10 +49,10 @@ endif()
 # TARGET PART
 # Excutable
 add_executable(main src/main.cpp)
+# include_directories(main ${CMAKE_SOURCE_DIR}/include) # /director
 # target_link_libraries(main message)
-# target_link_options(main PRIVATE
-#      ${sanitizer_flags}
-# )
+# target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/include)
+# target_link_options(main PRIVATE ${sanitizer_flags})
 # Library
 # add_library(hellolib SHARED src/main.cpp)
 # Library with the same name
