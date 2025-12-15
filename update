@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 git submodule update --init --recursive --depth=1
-cd ~/configure && git pull && git submodule update --remote --depth=1
+cd ~/configure && git pull --depth=1 && git submodule update --remote --depth=1
 
 # path config
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
@@ -41,6 +41,6 @@ ln -sf ~/configure/software/format/clang-format ~/.clang-format
 [[ -d ~/.emacs.d ]] || git clone --depth=1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
 cat ~/configure/software/emacs.d/custom_spacemacs >>~/.spacemacs
 
-# jupyter configure
+# ipython and jupyter configure
 [[ -d ~/.ipython/profile_default/startup ]] || mkdir -p ~/.ipython/profile_default/startup
 ln -sf ~/configure/software/start.py ~/.ipython/profile_default/startup/start.py
