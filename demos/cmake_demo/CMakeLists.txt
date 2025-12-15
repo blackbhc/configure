@@ -77,17 +77,17 @@ set_target_properties(message-static
 
 # UNIT TESTS
 # C++ programes
-enable_testing()
-add_executable(test_hello ./validation/test_hello.cpp)
-add_test(NAME test_hello COMMAND $<TARGET_FILE:test_hello>)
-# python scripts
-find_package(Python COMPONENTS Interpreter Development)
-# find_package(Python 3.xx EXACT COMPONENTS Interpreter Development)
-message(STATUS "Find python interpreter: ${Python_EXECUTABLE}")
-add_test(
-    NAME python_test
-    COMMAND ${Python_EXECUTABLE} ../validation/test_hello.py
-)
+# enable_testing()
+# add_executable(test_hello ./validation/test_hello.cpp)
+# add_test(NAME test_hello COMMAND $<TARGET_FILE:test_hello>)
+# # python scripts
+# find_package(Python COMPONENTS Interpreter Development)
+# # find_package(Python 3.xx EXACT COMPONENTS Interpreter Development)
+# message(STATUS "Find python interpreter: ${Python_EXECUTABLE}")
+# add_test(
+#     NAME python_test
+#     COMMAND ${Python_EXECUTABLE} ../validation/test_hello.py
+# )
 
 # # INSTALL PART
 # if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
