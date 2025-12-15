@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 git submodule update --init --recursive --depth=1
-cd ~/configure && git pull --depth=1 && git submodule update --remote --depth=1
+cd ~/configure && git pull && git submodule update --remote --depth=1
 
 # path config
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
