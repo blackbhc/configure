@@ -9,6 +9,5 @@ test
 tests
 .xmake
 __pycache__
-.xmake
 .cache*
 compile_commands.json
