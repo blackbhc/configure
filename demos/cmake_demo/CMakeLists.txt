@@ -82,6 +82,7 @@ add_executable(test_hello ./validation/test_hello.cpp)
 add_test(NAME test_hello COMMAND $<TARGET_FILE:test_hello>)
 # python scripts
 find_package(Python COMPONENTS Interpreter Development)
+# find_package(Python 3.xx EXACT COMPONENTS Interpreter Development)
 message(STATUS "Find python interpreter: ${Python_EXECUTABLE}")
 add_test(
     NAME python_test
