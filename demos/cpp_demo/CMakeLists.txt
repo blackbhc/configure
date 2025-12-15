@@ -5,18 +5,18 @@ cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 project(demo-project LANGUAGES CXX)
 # standard of the C++
 set(CMAKE_CXX_STANDARD 17)
-# set up the compiler
-set(CMAKE_C_COMPILER   gcc)
-set(CMAKE_CXX_COMPILER g++)
+# set up the compiler, default: use the system compiler
+# set(CMAKE_C_COMPILER   gcc)
+# set(CMAKE_CXX_COMPILER g++)
 # no compiler dependent extensions
 set(CMAKE_CXX_EXTENSIONS OFF)
 # check the compiler support the specified standard
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-# Build type, default: Debug
+# Build type, if not set, use the default value: Debug
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
 endif()
-# export the compilation commands
+# export the compilation commands, used for static analyzers
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # append the include directory of the whole project
 include_directories(${CMAKE_SOURCE_DIR}/include)
@@ -49,9 +49,15 @@ endif()
 # TARGET PART
 # Excutable
 add_executable(main src/main.cpp)
-# target_link_libraries(main message)
+add_subdirectory(fmt)
+target_link_libraries(main fmt::fmt-header-only) # link the {fmt} lib
 # target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/include)
-# target_link_options(main PRIVATE ${sanitizer_flags})
+#[[ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message(
+    STATUS "Use the sanitizer."
+    )
+    target_link_options(main PRIVATE ${sanitizer_flags})
+endif() ]]
 # Library
 # add_library(hellolib SHARED src/main.cpp)
 # Library with the same name
@@ -75,7 +81,7 @@ set_target_properties(message-static
   OUTPUT_NAME "message"
  ) ]]
 
-# UNIT TESTS
+# # UNIT TESTS
 # C++ programes
 # enable_testing()
 # add_executable(test_hello ./validation/test_hello.cpp)

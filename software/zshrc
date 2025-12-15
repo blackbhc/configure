@@ -38,18 +38,17 @@ alias tkss="tmux kill-session -t"
 ## others
 alias ic="imgcat"
 alias a2="aria2c"
+alias bat="bat --theme=\"Catppuccin Latte\""
 function mkcd
 {
   dir="$*";
   mkdir -p "$dir" && cd "$dir";
 }
 ## Development tools
-alias clang-tidy="clang-tidy --checks='bugprone-*,-bugprone-easily-swappable-parameters,-bugprone-casting-through-void,-bugprone-narrowing-conversions,-bugprone-implicit-widening-of-multiplication-result,clang-analyzer-*,concurrency-*,misc-*,-misc-non-private-member-variables-in-classes,modernize-*,-modernize-avoid-c-arrays,-modernize-use-trailing-return-type,mpi*,performance-*,readability-*,-readability-identifier-length,-readability-magic-numbers' --warnings-as-errors='mpi-*,performance-*' --use-color"
-# alias clang-tidy="clang-tidy --checks='*,-clang-analyzer-alpha.*' --warnings-as-errors='*' --use-color"
 function project
 {
   dir="$*";
-  cp -r $HOME/configure/demos/cmake_demo "$dir" && cd "$dir";
+  cp -r $HOME/configure/demos/cpp_demo "$dir" && cd "$dir";
 }
 
 # History file 
