@@ -7,7 +7,7 @@ auto main( int argc, char* argv[] ) -> int
     ( void )argc;
     ( void )argv;
 
-    fmt::println( "\nHello world with libfmt." );
+    fmt::println( "Hello world from {{fmt}}." );
 
     return EXIT_SUCCESS;
 }
