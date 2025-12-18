@@ -1,13 +1,13 @@
 # GLOBAL PART
 # minimal version of cmake
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
+# set up the compiler, default: use the system compiler
+# should be prior to the project() line, which determines the project language
+set(CMAKE_CXX_COMPILER clang++)
 # project name, language
 project(demo-project LANGUAGES CXX)
 # standard of the C++
-set(CMAKE_CXX_STANDARD 17)
-# set up the compiler, default: use the system compiler
-# set(CMAKE_C_COMPILER   gcc)
-# set(CMAKE_CXX_COMPILER g++)
+set(CMAKE_CXX_STANDARD 17) # to enable string_view
 # no compiler dependent extensions
 set(CMAKE_CXX_EXTENSIONS OFF)
 # check the compiler support the specified standard
@@ -23,18 +23,19 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 
 
 # COMPILATION FLAGS PART
+# always enable the -fPIC flag
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 # use colorful diagnostics
-set(CMAKE_C_FLAGS "-fdiagnostics-color=always")
-set(CMAKE_CXX_FLAGS "-fdiagnostics-color=always")
-set(CMAKE_CPP_FLAGS "-fdiagnostics-color=always")
+add_compile_options("$<$<COMPILE_LANGUAGE:CXX>:-fdiagnostics-color=always>")
 # customized debug flags: default one only includes -g
-set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wextra -Wpedantic -Werror -fPIC -DDEBUG")
+set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wextra -Wpedantic -Werror -DDEBUG")
 # print fundamental flags: -g, -O, and whether -DNDEBUG
 message(STATUS "C++ flags, Debug configuration: ${CMAKE_CXX_FLAGS_DEBUG}")
 message(STATUS "C++ flags, Release configuration: ${CMAKE_CXX_FLAGS_RELEASE}")
 message(
     STATUS
-    "C++ flags, Release configuration with Debug info: ${CMAKE_CXX_FLAGS_RELWITHDEBINFO}"
+    "C++ flags, Release configuration with Debug info:"
+    "${CMAKE_CXX_FLAGS_RELWITHDEBINFO}"
 )
 message(
     STATUS
@@ -53,15 +54,15 @@ endif()
 # TARGET PART
 # Excutable
 add_executable(main src/main.cpp)
-add_subdirectory(fmt)
+if(CMAKE_BUILD_TYPE STREQUAL "Debug") # enable sanitizer in debug mode
+    target_compile_options(main PRIVATE ${sanitizer_flags})
+    target_link_options(main PRIVATE ${sanitizer_flags})
+endif()
+# third party library
+find_package(fmt) # use the system installed library
+# add_subdirectory(fmt) # use the nested directory ./fmt/
 target_link_libraries(main fmt::fmt-header-only) # link the {fmt} lib
 # target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/include)
-#[[ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    message(
-    STATUS "Use the sanitizer."
-    )
-    target_link_options(main PRIVATE ${sanitizer_flags})
-endif() ]]
 # Library
 # add_library(hellolib SHARED src/main.cpp)
 # Library with the same name
@@ -69,7 +70,6 @@ endif() ]]
   SHARED
     $<TARGET_OBJECTS:message-objs>
  )
-
 set_target_properties(message-shared
  PROPERTIES
   OUTPUT_NAME "message"
@@ -79,7 +79,6 @@ add_library(message-static
  STATIC
   $<TARGET_OBJECTS:message-objs>
  )
-
 set_target_properties(message-static
  PROPERTIES
   OUTPUT_NAME "message"
@@ -90,6 +89,8 @@ set_target_properties(message-static
 # enable_testing()
 # add_executable(test_hello ./validation/test_hello.cpp)
 # add_test(NAME test_hello COMMAND $<TARGET_FILE:test_hello>)
+# target_compile_options(main PRIVATE ${sanitizer_flags})
+# target_link_options(main PRIVATE ${sanitizer_flags})
 # # python scripts
 # find_package(Python COMPONENTS Interpreter Development)
 # # find_package(Python 3.xx EXACT COMPONENTS Interpreter Development)
@@ -177,6 +178,8 @@ target_link_libraries(hello-mpi
   PUBLIC
  	  MPI::MPI_CXX
   )
+target_compile_options(hello-mpi PRIVATE ${sanitizer_flags})
+target_link_options(hello-mpi PRIVATE ${sanitizer_flags})
 
 3. Find all files (non-recursive) under a directory:
 file(GLOB SOURCE_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
