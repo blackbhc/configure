@@ -23,6 +23,10 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 
 
 # COMPILATION FLAGS PART
+# use colorful diagnostics
+set(CMAKE_C_FLAGS "-fdiagnostics-color=always")
+set(CMAKE_CXX_FLAGS "-fdiagnostics-color=always")
+set(CMAKE_CPP_FLAGS "-fdiagnostics-color=always")
 # customized debug flags: default one only includes -g
 set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wextra -Wpedantic -Werror -fPIC -DDEBUG")
 # print fundamental flags: -g, -O, and whether -DNDEBUG
