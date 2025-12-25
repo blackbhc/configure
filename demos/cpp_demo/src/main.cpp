@@ -1,5 +1,5 @@
 #include <cstdlib>
-// {fmt} lib for format print, with compatibility for low version c++ standard
+// {fmt} lib for format print, with compatibility for lower version c++ standard
 #include <fmt/base.h>
 
 int main( int argc, char* argv[] )
