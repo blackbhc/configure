@@ -41,15 +41,11 @@ message(
     STATUS
     "C++ flags, minimal Release configuration: ${CMAKE_CXX_FLAGS_MINSIZEREL}"
 )
-if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-    set(sanitizer_flags "-fsanitize=undefined" "-fsanitize=address")
-else()
-    set(sanitizer_flags
-        "-fsanitize=undefined"
-        "-fsanitize=address"
-        "-fsanitize=leak"
-    )
-endif()
+set(sanitizer_flags
+    "-fsanitize=undefined"
+    "-fsanitize=address"
+    "-fsanitize=leak"
+)
 
 # TARGET PART
 # Excutable
