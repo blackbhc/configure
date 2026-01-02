@@ -23,7 +23,7 @@ AllowShortBlocksOnASingleLine: Always
 # 允许短的case标签放在同一行
 AllowShortCaseLabelsOnASingleLine: false
 # 允许短的函数放在同一行:  None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
-AllowShortFunctionsOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: All
 # 允许短的if语句保持在同一行
 AllowShortIfStatementsOnASingleLine: OnlyFirstIf
 # 允许短的循环保持在同一行
@@ -77,7 +77,7 @@ BreakBeforeTernaryOperators: true
 # 在构造函数的初始化列表的逗号前换行
 BreakConstructorInitializersBeforeComma: false
 # 每行字符的限制，0表示没有限制
-ColumnLimit: 80
+ColumnLimit: 100
 # 描述具有特殊意义的注释的正则表达式，它不应该被分割为多行或以其它方式改变
 CommentPragmas: "^ IWYU pragma:"
 # 构造函数的初始化列表要么都在同一行，要么都各自一行
