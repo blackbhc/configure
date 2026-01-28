@@ -16,7 +16,7 @@ ln -sf ~/configure/software/zshrc ~/.local/zshrc
 
 # alacritty config
 [[ -d ~/.config/alacritty ]] || mkdir -p ~/.config/alacritty
-[[ -d ~/.config/alacritty/themes ]] || git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+[[ -d ~/.config/alacritty/themes ]] || git clone --depth=1 https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 ln -sf ~/configure/software/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # wezterm config
