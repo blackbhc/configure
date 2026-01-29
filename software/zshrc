@@ -58,7 +58,6 @@ SAVEHIST=10000000
 
 # Some CLI tools
 eval "$(zoxide init zsh)" # z cmd
-eval "$(thefuck --alias)" # fuck cmd
 eval "$(fzf --zsh)"       # fzf for history research
 
 ### Added by Zinit's installer
