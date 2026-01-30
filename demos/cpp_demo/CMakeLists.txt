@@ -63,7 +63,7 @@ find_package(fmt) # use the system installed library
 # add_subdirectory(fmt) # use the nested directory ./fmt/
 target_link_libraries(main fmt::fmt-header-only) # link the {fmt} lib
 
-add_library(foo MODULE src/foo.cpp)
+add_library(foo SHARED src/foo.cpp)
 target_link_libraries(foo fmt::fmt-header-only) # link the {fmt} lib
 
 # target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/include)
