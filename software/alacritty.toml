@@ -43,7 +43,7 @@ mode = "~Search"
 mods = "Shift|Control"
 
 [general]
-import = ["~/.config/alacritty/themes/themes/alabaster.toml"]
+import = ["~/.config/alacritty/themes/themes/catppuccin_latte.toml"]
 
 [terminal]
 
