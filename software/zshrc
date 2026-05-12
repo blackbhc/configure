@@ -1,5 +1,4 @@
 # Alias
-alias ls="lsd"
 alias vi="nvim"
 alias ls="lsd"
 alias ll="lsd -l"
