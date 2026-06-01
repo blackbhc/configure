@@ -35,7 +35,7 @@ ln -sf ~/configure/format/pyproject.toml ~/.config/black/.pyproject.toml
 ln -sf ~/configure/software/format/clang-format ~/.clang-format
 
 # LazyVim config
-[[ -d ~/.config/nvim ]] || git clone --depth=1 git@github.com:blackbhc/nvim.git ~/.config/nvim
+[[ -d ~/.config/nvim ]] || git clone --depth=1 https://github.com/blackbhc/nvim.git ~/.config/nvim
 
 # emacs config
 [[ -d ~/.emacs.d ]] || git clone --depth=1 https://github.com/syl20bnr/spacemacs ~/.emacs.d
