@@ -35,7 +35,7 @@ alias ts="tmux new-session -s"
 alias tksv="tmux kill-server"
 alias tkss="tmux kill-session -t"
 ## others
-alias ic="timg"
+alias ic="imgcat -l"
 alias bat="bat --theme=\"Catppuccin Latte\""
 function mkcd
 {
