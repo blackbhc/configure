@@ -44,3 +44,6 @@ cat ~/configure/software/emacs.d/custom_spacemacs >>~/.spacemacs
 # ipython and jupyter configure
 [[ -d ~/.ipython/profile_default/startup ]] || mkdir -p ~/.ipython/profile_default/startup
 ln -sf ~/configure/software/start.py ~/.ipython/profile_default/startup/start.py
+
+# Minimal vim config
+[[ -d ~/.vimrc ]] || cp ~/configure/software/vimrc ~/.vimrc
