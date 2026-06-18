@@ -52,3 +52,7 @@ coredump
 .ipynb_checkpoints
 *.pyc
 __pyche__
+
+# Rust tmp files #
+##################
+Cargo.lock
