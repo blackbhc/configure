@@ -9,4 +9,16 @@
 
 3. 代码注释、文档等使用英文。
 4. 开发项目时，使用git进行版本控制：main是稳定分支，dev & debug是开发和测试分支，完成测试验证后再将开发内容合并至稳定分支。
+5. Python环境使用conda：如果没有检测到base，使用conda activate激活
+6. Python作图时，import后添加一下matplotlib配置代码
 
+```Python
+plt.rcParams.update(
+    {
+        "font.family": "Times New Roman",
+        "font.size": 26,
+        "mathtext.fontset": "cm",
+    }
+)
+
+```
