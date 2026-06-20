@@ -50,7 +50,7 @@
     file-style = bold yellow ul
     file-decoration-style = none
     hunk-header-decoration-style = cyan box ul
-[http]
-	proxy = http://127.0.0.1:7890
-[https]
-	proxy = http://127.0.0.1:7890
+; [http]
+; 	proxy = http://127.0.0.1:7890
+; [https]
+; 	proxy = http://127.0.0.1:7890
